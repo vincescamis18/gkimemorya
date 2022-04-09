@@ -38,7 +38,8 @@ stages:
 # modify build ##
     - script: |
         npm run install-client
-        npm run install-npm
+        cd ..
+        npm install
       displayName: 'npm install, build and test'
 
     - task: ArchiveFiles@2
