@@ -38,7 +38,6 @@ stages:
 # modify build ##
     - script: |
         npm run install-client
-        cd ..
         npm install
       displayName: 'npm install, build and test'
 
