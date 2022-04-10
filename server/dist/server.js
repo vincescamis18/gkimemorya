@@ -21,8 +21,7 @@ const io = new socket_io_1.Server(server);
 app.use(express_1.default.json()); //Body parser
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use((0, cors_1.default)({
-//  origin: "http://localhost:3000",
-    origin: "http://0.0.0.0", // use 0.0.0.0
+    origin: "http://localhost:3000",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
 }));
@@ -41,6 +40,10 @@ mongoose_1.default
 // }
 // Temporarily remove the checking for prod env
 app.use(express_1.default.static("../../client/build"));
+// Endpoint for testing server
+app.get("/test/server", (req, res) => {
+    res.json({ status: "server is working..." });
+});
 // passport setup
 require("./passport");
 app.use((0, cookie_session_1.default)({ name: "memorya-session", keys: [`${process.env.SESSION_SECRET}`], maxAge: 10 * 60 * 1000 }));

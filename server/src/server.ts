@@ -45,6 +45,11 @@ mongoose
 // Temporarily remove the checking for prod env
 app.use(express.static("../../client/build"));
 
+// Endpoint for testing server
+app.get("/test/server", (req, res) => {
+	res.json({ status: "server is working..." });
+});
+
 // passport setup
 require("./passport");
 app.use(cookieSession({ name: "memorya-session", keys: [`${process.env.SESSION_SECRET}`], maxAge: 10 * 60 * 1000 }));
