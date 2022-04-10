@@ -37,7 +37,8 @@ stages:
 
 # modify build ####
     - script: |
-        npm run install-client
+        cd client
+        npm install
         cd ..
         npm install
       displayName: 'npm install, build and test'
