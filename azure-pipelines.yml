@@ -12,13 +12,13 @@ variables:
   azureSubscription: '31ae0ca5-414d-4909-9dee-7513ccd4e1dd'
 
   # Web app name
-  webAppName: 'webappmemorya'
+  webAppName: 'memorywebapp' #change from me memorywebapp
 
   # Environment name
-  environmentName: 'webappmemorya'
+  environmentName: 'memorywebapp' #change from me memorywebapp
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  vmImageName: 'windows-latest'
 
 stages:
 - stage: Build
@@ -71,7 +71,7 @@ stages:
             displayName: 'Azure Web App Deploy: webappmemorya'
             inputs:
               azureSubscription: $(azureSubscription)
-              appType: webAppLinux
+              appType: webApp #change from webAppLinux
               appName: $(webAppName)
               runtimeStack: 'NODE|16.14'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
