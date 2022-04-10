@@ -4,7 +4,7 @@
 	"description": "Grupo kalinangan project 101",
 	"main": "index.js",
 	"scripts": {
-		"install-client": "cd client && npm install && cd .. && npm install",
+		"install-client": "cd client && npm install && cd .. && npm install && cd client && npm run build",
 		"build": "cd client && npm run build",
 		"heroku-postbuild": "npm run install-client && npm run build",
 		"start": "cd server && cd dist && node server.js",
