@@ -12,10 +12,10 @@ variables:
   azureSubscription: '31ae0ca5-414d-4909-9dee-7513ccd4e1dd'
 
   # Web app name
-  webAppName: 'memorywebapp' #change from me memorywebapp
+  webAppName: 'memorya' #change from me memorywebapp
 
   # Environment name
-  environmentName: 'memorywebapp' #change from me memorywebapp
+  environmentName: 'memorya' #change from me memorywebapp
 
   # Agent VM image name
   vmImageName: 'windows-latest'
@@ -72,6 +72,7 @@ stages:
               azureSubscription: $(azureSubscription)
               appType: webApp #change from webAppLinux
               appName: $(webAppName)
+              slotName: devtest #added devtest slot
               runtimeStack: 'NODE|16.14'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               startUpCommand: 'npm run dev'
