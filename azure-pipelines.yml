@@ -9,7 +9,7 @@ trigger:
 variables:
 
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: '31ae0ca5-414d-4909-9dee-7513ccd4e1dd'
+  azureSubscription: 'Microsoft Azure Sponsorship(35ea7c1f-a3c1-43df-a23d-fddc6f4c1b4b)'
 
   # Web app name
   webAppName: 'memorya' #change from me memorywebapp
@@ -72,7 +72,7 @@ stages:
               azureSubscription: $(azureSubscription)
               appType: webApp #change from webAppLinux
               appName: $(webAppName)
-              slotName: devtest #added devtest slot
+              slotName: 'devtest' #added devtest slot
               runtimeStack: 'NODE|16.14'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               startUpCommand: 'npm run dev'
