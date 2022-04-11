@@ -71,7 +71,7 @@ stages:
               azureSubscription: $(azureSubscription)
               appType: webApp #change from webAppLinux
               appName: $(webAppName)
-              slotName: devtest #added devtest slot
+#              slotName: devtest #added devtest slot
               runtimeStack: 'NODE|16.14'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               startUpCommand: 'npm run start'
