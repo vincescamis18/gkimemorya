@@ -12,10 +12,10 @@ variables:
   azureSubscription: 'ad510634-def8-47a3-aaba-24d2a61f64ec'
 
   # Web app name
-  webAppName: 'webappmemorya'
+  webAppName: 'memorywebapp'
 
   # Environment name
-  environmentName: 'webappmemorya'
+  environmentName: 'memorywebapp'
 
   # Agent VM image name
   vmImageName: 'windows-latest'
