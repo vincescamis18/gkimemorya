@@ -2411,7 +2411,7 @@
 }
 
 .navbar-parent .logo {
-  width: 400px;
+  width: 200px;
   height: 50px;
   margin: 0px 20px;
   background-color: #c4c4c4;
@@ -2442,6 +2442,15 @@
   background-color: #c4c4c4;
   border: 0px solid black;
   margin: 0px 25px 0px 0px;
+}
+
+.navbar-parent .right-items-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .navbar-parent .home-icon,
@@ -2539,6 +2548,39 @@
 .navbar-parent textarea:focus,
 .navbar-parent button:focus {
   outline: none;
+}
+
+@media (max-width: 1500px) {
+  .navbar-parent .navbar-container {
+    padding: 0px 0px;
+  }
+  .navbar-parent .dropdown {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar-parent .navbar-container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .navbar-parent .search-container {
+    display: none;
+  }
+  .navbar-parent .search-icon {
+    display: none;
+  }
+  .navbar-parent .search-input {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar-parent .home-icon,
+  .navbar-parent .compass-icon {
+    display: none;
+  }
 }
 
 .all-memory-parent {
