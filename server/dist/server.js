@@ -35,11 +35,9 @@ mongoose_1.default
 })
     .then(() => console.log("[S:01] Database Connected"))
     .catch((err) => console.log(err));
-// if (process.env.NODE_ENV === "production") {
-// 	app.use(express.static("../../client/build"));
-// }
-// Temporarily remove the checking for prod env
-app.use(express_1.default.static("../../client/build"));
+if (process.env.NODE_ENV === "production") {
+    app.use(express_1.default.static("../../client/build"));
+}
 // Endpoint for testing server
 app.get("/test/server", (req, res) => {
     res.json({ status: "server is working..." });
