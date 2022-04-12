@@ -37,7 +37,7 @@ stages:
 
 # modify build ####
     - script: |
-        npm install
+        npm run install-client
       displayName: 'npm install, build and test'
     - task: ArchiveFiles@2
       displayName: 'Archive files'
@@ -74,4 +74,4 @@ stages:
 #              slotName: devtest #added devtest slot
               runtimeStack: 'NODE|16.14'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              startUpCommand: 'npm run start'
+              startUpCommand: 'npm run dev'
