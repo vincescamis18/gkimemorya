@@ -129,5 +129,5 @@ app.get("*", (req, res) => {
     res.sendFile(path_1.default.resolve(__dirname, "..", "..", "client", "build", "index.html"));
 });
 // Deploying server to available port
-const PORT = process.env.PORT || 443;
+const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`[S:00] server started at port ${PORT}`));
