@@ -17,7 +17,7 @@ variables:
   # Environment name
   environmentName: 'webappmemorya'
 
-  # Agent VM image name#
+  # Agent VM image name##
   vmImageName: 'ubuntu-latest'
 
 stages:
