@@ -174,7 +174,7 @@ const DisplayAllMemoryV2 = () => {
 		setViewRecord(record);
 	};
 
-	const DisplaycollectionFilteredByTitle = () => (
+	const DisplaycollectionFiltered = () => (
 		<div className="curated-collection-parent">
 			<div className="display-all-curation-parent">
 				<div>
@@ -203,7 +203,7 @@ const DisplayAllMemoryV2 = () => {
 	const SideDashboard = () => (
 		<React.Fragment>
 			<div className="side-memu-spacing"></div>
-			<div className="side-menu-container">
+			<div className="side-menu-container no-select">
 				<div className="side-menu-title no-select">
 					<span>Search results</span>
 				</div>
@@ -278,7 +278,7 @@ const DisplayAllMemoryV2 = () => {
 						<div>
 							<div className="filter-result-border"></div>
 							<p className="filter-result-title">Curated Stories</p>
-							<DisplaycollectionFilteredByTitle />
+							<DisplaycollectionFiltered />
 						</div>
 					) : (
 						<React.Fragment></React.Fragment>

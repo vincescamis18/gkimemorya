@@ -71,7 +71,7 @@ const NavbarV1: React.FC = () => {
 
 	if (userState.isLoading) return <div className="navbar-parent"></div>;
 	return (
-		<div className="navbar-parent">
+		<div className="navbar-parent no-select">
 			<div className="navbar-container">
 				<div className="logo" onClick={() => navigate("/")}>
 					Logo

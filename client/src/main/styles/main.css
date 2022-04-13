@@ -3324,7 +3324,7 @@
   opacity: 0.8;
 }
 
-.no-select {
+.no-select, img {
   -webkit-touch-callout: none;
   /* iOS Safari */
   -webkit-user-select: none;

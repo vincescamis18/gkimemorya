@@ -81,7 +81,7 @@ const User: React.FC = () => {
 	);
 
 	const SideMenu = () => (
-		<div className="side-menu-parent">
+		<div className="side-menu-parent no-select">
 			<div className="side-menu-container">
 				<img src={filterBtnV1} alt="filter" className="cursor-point filter-btn" />
 				<img src={addBtnV1} alt="add" className="cursor-point add-btn" onClick={() => navigate("/upload-memory")} />
