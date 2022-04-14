@@ -244,67 +244,6 @@
   background-color: #4b4b4b;
 }
 
-.explore .center-all-users-parent {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 45px;
-  padding-bottom: 500px;
-}
-
-.explore .center-all-users-parent .user-details-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.explore .center-all-users-parent .user-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 1335px;
-  background-color: whitesmoke;
-  color: black;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 10px 30px;
-  border: 1px solid black;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.explore .center-all-users-parent .user-item:hover {
-  background-color: #e1e1e1;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  cursor: pointer;
-}
-
-.explore .center-all-users-parent .user-item:active {
-  background-color: #cdcdcd;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.explore .center-all-users-parent .user-image-container {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  margin-right: 20px;
-}
-
 .home {
   background-image: url("../assets/images/backgrounds/bg-dot.png");
   background-color: #fff;
@@ -2583,6 +2522,323 @@
   }
 }
 
+.container-top-bottom-margin {
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+.container-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.container-width-explore {
+  width: 1335px;
+}
+
+.container-width-curator-dashboard {
+  width: 90%;
+  margin: 50px 0px;
+}
+
+.curated-collection-parent {
+  width: 100%;
+}
+
+.curated-collection-parent input:focus {
+  outline: none;
+}
+
+.curated-collection-parent .all-user-memory-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 600px;
+}
+
+.curated-collection-parent .all-user-memory-center .all-user-memory-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 930px;
+  height: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.curated-collection-parent .all-user-memory-center .user-memory-img-container {
+  width: 175px;
+  height: 175px;
+  margin-bottom: 7px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.curated-collection-parent .all-user-memory-center .checkbox-container {
+  position: absolute;
+  background-color: #fff;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+.curated-collection-parent .all-user-memory-center .checkbox-active {
+  background-color: #00e8fc;
+}
+
+.curated-collection-parent .all-user-memory-center .select-container {
+  position: relative;
+}
+
+.curated-collection-parent .tab-selection-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.curated-collection-parent .tab-selection-parent .tab-selection-container {
+  width: 90%;
+  height: 50px;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 50px;
+}
+
+.curated-collection-parent .tab-selection-parent .tab-selection-container .tab-option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 200px;
+  background: black;
+  color: white;
+  position: relative;
+}
+
+.curated-collection-parent .tab-selection-parent .tab-selection-container .tab-option:hover {
+  cursor: pointer;
+  background-color: #323232;
+}
+
+.curated-collection-parent .tab-selection-parent .tab-selection-container .tab-option:active {
+  background-color: #4b4b4b;
+}
+
+.curated-collection-parent .tab-selection-parent .tab-selection-container .tab-option-selected {
+  background-color: #ff0000e6;
+  width: 150px;
+  height: 5px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.curated-collection-parent .tab-selection-parent .tab-details-container {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.curated-collection-parent .tab-selection-parent .tab-details-container .tab-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.curated-collection-parent .tab-selection-parent .save-collection-btn {
+  height: 50px;
+  padding: 0px 55px;
+  font-weight: 500;
+  font-size: 20px;
+  background-color: #0ec3b9;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+}
+
+.curated-collection-parent .tab-selection-parent .save-collection-btn:hover {
+  cursor: pointer;
+  background-color: #0faca4;
+}
+
+.curated-collection-parent .tab-selection-parent .save-collection-btn:active {
+  cursor: pointer;
+  background-color: #119992;
+}
+
+.curated-collection-parent .display-curation-info-parent {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 600px;
+}
+
+.curated-collection-parent .display-curation-info-parent .single-line-input-container {
+  margin: 10px 0px;
+  width: 850px;
+  height: 60px;
+  background-color: white;
+  padding: 10px;
+}
+
+.curated-collection-parent .display-curation-info-parent .mutli-line-input-container {
+  border: 2px solid black;
+  margin: 10px 0px;
+  width: 850px;
+  height: 320px;
+  background-color: white;
+  padding: 10px;
+  resize: none;
+}
+
+.curated-collection-parent .display-curation-info-parent .img-spacing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 850px;
+}
+
+.curated-collection-parent .display-curation-info-parent .upload-img-container {
+  height: 200px;
+  width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid #80808080;
+}
+
+.curated-collection-parent .display-curation-info-parent .upload-error {
+  color: red;
+}
+
+.curated-collection-parent .display-all-curation-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.curated-collection-parent .display-all-curation-parent .header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 25px;
+}
+
+.curated-collection-parent .display-all-curation-parent .create-collection-btn-container {
+  height: 50px;
+  padding: 0px 55px;
+  font-weight: 500;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+}
+
+.curated-collection-parent .display-all-curation-parent .create-collection-btn-selected {
+  background-color: #bde4a8;
+  color: #000;
+}
+
+.curated-collection-parent .display-all-curation-parent .create-collection-btn-idle {
+  background-color: grey;
+  color: #fff;
+}
+
+.curated-collection-parent .display-all-curation-parent .colection-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 10px;
+  border: 1px solid black;
+}
+
+.curated-collection-parent .display-all-curation-parent .colection-container-selected {
+  background-color: #c8fac880;
+}
+
+.curated-collection-parent .display-all-curation-parent .colection-container-idle {
+  background-color: #fafafa;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.curated-collection-parent .display-all-curation-parent .colection-container-idle:hover {
+  background-color: #e1e1e1;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.curated-collection-parent .display-all-curation-parent .collection-img-container {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.curated-collection-parent .display-all-curation-parent .collection-info-container {
+  margin: 10px 20px;
+  text-align: justify;
+}
+
 .all-memory-parent {
   background-image: url("../assets/images/backgrounds/bg-dot.png");
   background-color: #fff;
@@ -3063,318 +3319,6 @@
   height: 50px;
   border-radius: 100%;
   margin-right: 20px;
-}
-
-.container-center {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-}
-
-.container-width-explore {
-  width: 1335px;
-}
-
-.container-width-curator-dashboard {
-  width: 90%;
-  margin: 50px 0px;
-}
-
-.curated-collection-parent {
-  width: 100%;
-}
-
-.curated-collection-parent input:focus {
-  outline: none;
-}
-
-.curated-collection-parent .all-user-memory-center {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: 600px;
-}
-
-.curated-collection-parent .all-user-memory-center .all-user-memory-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 930px;
-  height: 100%;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-item-align: center;
-      align-self: center;
-}
-
-.curated-collection-parent .all-user-memory-center .user-memory-img-container {
-  width: 175px;
-  height: 175px;
-  margin-bottom: 7px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.curated-collection-parent .all-user-memory-center .checkbox-container {
-  position: absolute;
-  background-color: #fff;
-  top: 5px;
-  left: 5px;
-  width: 30px;
-  height: 30px;
-  border: 1px solid black;
-}
-
-.curated-collection-parent .all-user-memory-center .checkbox-active {
-  background-color: #00e8fc;
-}
-
-.curated-collection-parent .all-user-memory-center .select-container {
-  position: relative;
-}
-
-.curated-collection-parent .tab-selection-parent {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.curated-collection-parent .tab-selection-parent .tab-selection-container {
-  width: 90%;
-  height: 50px;
-  background-color: black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-left: 50px;
-}
-
-.curated-collection-parent .tab-selection-parent .tab-selection-container .tab-option {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 100%;
-  width: 200px;
-  background: black;
-  color: white;
-  position: relative;
-}
-
-.curated-collection-parent .tab-selection-parent .tab-selection-container .tab-option:hover {
-  cursor: pointer;
-  background-color: #323232;
-}
-
-.curated-collection-parent .tab-selection-parent .tab-selection-container .tab-option:active {
-  background-color: #4b4b4b;
-}
-
-.curated-collection-parent .tab-selection-parent .tab-selection-container .tab-option-selected {
-  background-color: #ff0000e6;
-  width: 150px;
-  height: 5px;
-  position: absolute;
-  bottom: 0px;
-}
-
-.curated-collection-parent .tab-selection-parent .tab-details-container {
-  width: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 50px;
-  margin-top: 20px;
-}
-
-.curated-collection-parent .tab-selection-parent .tab-details-container .tab-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.curated-collection-parent .tab-selection-parent .save-collection-btn {
-  height: 50px;
-  padding: 0px 55px;
-  font-weight: 500;
-  font-size: 20px;
-  background-color: #0ec3b9;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-}
-
-.curated-collection-parent .tab-selection-parent .save-collection-btn:hover {
-  cursor: pointer;
-  background-color: #0faca4;
-}
-
-.curated-collection-parent .tab-selection-parent .save-collection-btn:active {
-  cursor: pointer;
-  background-color: #119992;
-}
-
-.curated-collection-parent .display-curation-info-parent {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 600px;
-}
-
-.curated-collection-parent .display-curation-info-parent .single-line-input-container {
-  margin: 10px 0px;
-  width: 850px;
-  height: 60px;
-  background-color: white;
-  padding: 10px;
-}
-
-.curated-collection-parent .display-curation-info-parent .mutli-line-input-container {
-  border: 2px solid black;
-  margin: 10px 0px;
-  width: 850px;
-  height: 320px;
-  background-color: white;
-  padding: 10px;
-  resize: none;
-}
-
-.curated-collection-parent .display-curation-info-parent .img-spacing {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 850px;
-}
-
-.curated-collection-parent .display-curation-info-parent .upload-img-container {
-  height: 200px;
-  width: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border: 1px solid #80808080;
-}
-
-.curated-collection-parent .display-curation-info-parent .upload-error {
-  color: red;
-}
-
-.curated-collection-parent .display-all-curation-parent {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.curated-collection-parent .display-all-curation-parent .header-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  margin-bottom: 25px;
-}
-
-.curated-collection-parent .display-all-curation-parent .create-collection-btn-container {
-  height: 50px;
-  padding: 0px 55px;
-  font-weight: 500;
-  font-size: 20px;
-  border: none;
-  border-radius: 10px;
-}
-
-.curated-collection-parent .display-all-curation-parent .create-collection-btn-selected {
-  background-color: #bde4a8;
-  color: #000;
-}
-
-.curated-collection-parent .display-all-curation-parent .create-collection-btn-idle {
-  background-color: grey;
-  color: #fff;
-}
-
-.curated-collection-parent .display-all-curation-parent .colection-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 10px;
-  border: 1px solid black;
-}
-
-.curated-collection-parent .display-all-curation-parent .colection-container-selected {
-  background-color: #c8fac880;
-}
-
-.curated-collection-parent .display-all-curation-parent .colection-container-idle {
-  background-color: #fafafa;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.curated-collection-parent .display-all-curation-parent .colection-container-idle:hover {
-  background-color: #e1e1e1;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.curated-collection-parent .display-all-curation-parent .collection-img-container {
-  width: 200px;
-  height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.curated-collection-parent .display-all-curation-parent .collection-info-container {
-  margin: 10px 20px;
-  text-align: justify;
 }
 
 .dashboard-memory-of-the-day {
