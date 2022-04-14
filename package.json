@@ -14,7 +14,8 @@
 		"client": "cd client && npm start",
 		"dev": "concurrently \"npm run server\" \"npm run client\" ",
 		"compile": "tsc -p ./server",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"pipeline": "cd client && npm install && cd .. && npm install"
 	},
 	"author": "Jude Jawod",
 	"license": "ISC",
