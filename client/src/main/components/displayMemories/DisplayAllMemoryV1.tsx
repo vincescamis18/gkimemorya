@@ -53,7 +53,7 @@ const DisplayAllMemoryV1 = (props: IProps) => {
 					<React.Fragment>
 						<div className="memory-containner cursor-point no-select" onClick={() => selectMemory(record)}>
 							<div className="memory-details">
-								<h4>{record.title}</h4>
+								<h4 className="title">{record.title}</h4>
 								<p className="description">{record.description}</p>
 							</div>
 
