@@ -36,7 +36,7 @@ stages:
       displayName: 'Install Node.js'
 
     - script: |
-        npm run pipeline
+        npm run install-client
       displayName: 'npm install, build and test'
 
     - task: ArchiveFiles@2
@@ -73,4 +73,4 @@ stages:
               appName: $(webAppName)
               runtimeStack: 'NODE|16.14'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              startUpCommand: 'npm run server'
+              startUpCommand: 'npm run dev'
