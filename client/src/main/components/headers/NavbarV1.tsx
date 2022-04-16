@@ -71,7 +71,7 @@ const NavbarV1: React.FC = () => {
 
 	if (userState.isLoading) return <div className="navbar-parent"></div>;
 	return (
-		<div className="navbar-parent">
+		<div className="navbar-parent no-select">
 			<div className="navbar-container">
 				<div className="logo" onClick={() => navigate("/")}>
 					Logo
@@ -91,7 +91,7 @@ const NavbarV1: React.FC = () => {
 					/>
 				</div>
 
-				<div style={{ display: "flex", alignItems: "center" }}>
+				<div className="right-items-container">
 					<img src={HomeV1} alt="home" className="home-icon" onClick={() => navigate("/")} />
 					<img src={ExploreV1} alt="explore" className="compass-icon" onClick={() => navigate("/explore")} />
 					<Profile />

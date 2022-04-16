@@ -43,7 +43,7 @@ const DisplayAllMemoryV1 = (props: IProps) => {
 			return emptySlots.map((item: any, index: number) => (
 				<img src={EmptyV1} alt="record empty" key={index} className="all-memory-display-container" />
 			));
-		}
+		} else return <img src={EmptyV1} alt="record empty" className="all-memory-display-container" />;
 	};
 
 	const DisplayUserAllMemories = () => (
@@ -51,9 +51,9 @@ const DisplayAllMemoryV1 = (props: IProps) => {
 			<div className="all-memory-container">
 				{recordState.records?.map((record: IRecordWithCreator, index: number) => (
 					<React.Fragment>
-						<div className="memory-containner cursor-point" onClick={() => selectMemory(record)} style={{}}>
+						<div className="memory-containner cursor-point no-select" onClick={() => selectMemory(record)}>
 							<div className="memory-details">
-								<h4>{record.title}</h4>
+								<h4 className="title">{record.title}</h4>
 								<p className="description">{record.description}</p>
 							</div>
 

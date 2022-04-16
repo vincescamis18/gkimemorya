@@ -22,11 +22,14 @@
 
 @import "./components/headers/navbarV1";
 
+@import "./components/displayCuratedCollection/displayAllCuratedCollectionV1";
+
 @import "./components/displayMemories/displayAllMemoryV1";
 @import "./components/displayMemories/displayAllMemoryV2";
 @import "./components/displayMemories/memoryOfTheDay";
 
-@import "./components/curatorDashboard/curatedCollection";
+@import "./components/displayUsers/displayAllUsersV1";
+
 @import "./components/curatorDashboard/memoryOfTheDay";
 
 * {
@@ -80,4 +83,8 @@
 a {
 	text-decoration: none;
 	color: inherit;
+}
+
+img {
+	@extend .no-select;
 }

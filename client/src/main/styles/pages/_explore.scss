@@ -42,46 +42,4 @@
 			background-color: #4b4b4b;
 		}
 	}
-
-	.center-all-users-parent {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		margin-top: 45px;
-		padding-bottom: 500px;
-
-		.user-details-container {
-			display: flex;
-		}
-
-		.user-item {
-			display: flex;
-			flex-direction: row;
-			width: 1335px;
-			background-color: rgb(245, 245, 245);
-			color: black;
-			justify-content: space-between;
-			padding: 10px 30px;
-			border: 1px solid black;
-			transition: 0.5s;
-		}
-
-		.user-item:hover {
-			background-color: rgb(225, 225, 225);
-			transition: 0.5s;
-			cursor: pointer;
-		}
-
-		.user-item:active {
-			background-color: rgb(205, 205, 205);
-			transition: 0.5s;
-		}
-
-		.user-image-container {
-			width: 50px;
-			height: 50px;
-			border-radius: 100%;
-			margin-right: 20px;
-		}
-	}
 }

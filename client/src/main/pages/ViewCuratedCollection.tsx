@@ -49,7 +49,7 @@ const CurratedCollection = () => {
 	};
 
 	const DisplayUserAllMemories = () => (
-		<div className="all-memory-parent">
+		<div className="all-memory-parent no-select">
 			<div className="all-memory-container">
 				{recordState.records?.map((record: any, index: number) => {
 					if (selectRecord.find((item: any) => item.record._id == record._id))
