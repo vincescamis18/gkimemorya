@@ -152,15 +152,15 @@ const CurratedCollection = () => {
 		<div className="tab-selection-parent">
 			<div className="tab-selection-container">
 				<div className="tab-option" onClick={() => setTabSelected("all memories")}>
-					{tabSelected == "all memories" ? <span className="tab-option-selected"></span> : <></>}
+					<span className={tabSelected == "all memories" ? "tab-option-selected" : ""}></span>
 					<span>All Memories</span>
 				</div>
 				<div className="tab-option" onClick={() => setTabSelected("selected memories")}>
-					{tabSelected == "selected memories" ? <span className="tab-option-selected"></span> : <></>}
+					<span className={tabSelected == "selected memories" ? "tab-option-selected" : ""}></span>
 					<span>Collected Memories</span>
 				</div>
 				<div className="tab-option" onClick={() => setTabSelected("curation information")}>
-					{tabSelected == "curation information" ? <span className="tab-option-selected"></span> : <></>}
+					<span className={tabSelected == "curation information" ? "tab-option-selected" : ""}></span>
 					<span>Information</span>
 				</div>
 			</div>
@@ -186,76 +186,74 @@ const CurratedCollection = () => {
 	// ------------------------------- Tab Selection -------------------------------
 
 	// ------------------------------- Display All User Memories -------------------------------
-	const DisplayAllUserMemories = () => {
-		return (
-			<div className="all-user-memory-center">
-				<div className="all-user-memory-container">
-					{recordState.records?.map((record: IRecordWithCreator, index: number) => (
-						<div key={index} className="select-container">
-							<div
-								className={`cursor-point checkbox-container ${
-									selectRecord.find((item: any) => item._id == record._id) ? "checkbox-active" : ""
-								}`}
-								onClick={() => {
-									if (selectRecord.find((item: any) => item._id == record._id))
-										setSelectRecord(selectRecord.filter((item: any) => item._id != record._id));
-									else setSelectRecord([...selectRecord, record]);
-								}}
-							></div>
-							<img
-								className="cursor-point user-memory-img-container"
-								src={record.images[0].link}
-								alt="record image"
-								onClick={() => {
-									setTriggerViewMemory(!triggerViewMemory);
-									setViewRecord(record);
-								}}
-							/>
-						</div>
-					))}
-					{renderEmptySelectionImages(5, recordState.records?.length, "user-memory-img-container")}
-				</div>
+	const DisplayAllUserMemories = () => (
+		<div className="all-user-memory-center">
+			<div className="all-user-memory-container">
+				{recordState.records?.map((record: IRecordWithCreator, index: number) => (
+					<div key={index} className="select-container">
+						<div
+							className={`cursor-point checkbox-container ${
+								selectRecord.find((item: any) => item._id == record._id) ? "checkbox-active" : ""
+							}`}
+							onClick={() => {
+								if (selectRecord.find((item: any) => item._id == record._id))
+									setSelectRecord(selectRecord.filter((item: any) => item._id != record._id));
+								else setSelectRecord([...selectRecord, record]);
+							}}
+						></div>
+						<img
+							className="cursor-point user-memory-img-container"
+							src={record.images[0].link}
+							alt="record image"
+							onClick={() => {
+								setTriggerViewMemory(!triggerViewMemory);
+								setViewRecord(record);
+							}}
+						/>
+					</div>
+				))}
+				{renderEmptySelectionImages(5, recordState.records?.length, "user-memory-img-container")}
 			</div>
-		);
-	};
+		</div>
+	);
+
 	// ------------------------------- Display All User Memories -------------------------------
 
 	// ------------------------------- Display All Selected User Memories -------------------------------
-	const DisplayAllSelectedMemories = () => {
-		return (
-			<div className="all-user-memory-center">
-				<div className="all-user-memory-container">
-					{recordState.records?.map((record: IRecordWithCreator, index: number) => {
-						if (selectRecord.find((item: any) => item._id == record._id))
-							return (
-								<div key={index} className="select-container">
-									<div
-										className={`cursor-point checkbox-container ${
-											selectRecord.find((item: any) => item._id == record._id) ? "checkbox-active" : ""
-										}`}
-										onClick={() => {
-											if (selectRecord.find((item: any) => item._id == record._id))
-												setSelectRecord(selectRecord.filter((item: any) => item._id != record._id));
-											else setSelectRecord([...selectRecord, record]);
-										}}
-									></div>
-									<img
-										className="cursor-point user-memory-img-container"
-										src={record.images[0].link}
-										alt="record image"
-										onClick={() => {
-											setTriggerViewMemory(!triggerViewMemory);
-											setViewRecord(record);
-										}}
-									/>
-								</div>
-							);
-					})}
-					{renderEmptySelectionImages(5, selectRecord?.length, "user-memory-img-container")}
-				</div>
+	const DisplayAllSelectedMemories = () => (
+		<div className="all-user-memory-center">
+			<div className="all-user-memory-container">
+				{recordState.records?.map((record: IRecordWithCreator, index: number) => {
+					if (selectRecord.find((item: any) => item._id == record._id))
+						return (
+							<div key={index} className="select-container">
+								<div
+									className={`cursor-point checkbox-container ${
+										selectRecord.find((item: any) => item._id == record._id) ? "checkbox-active" : ""
+									}`}
+									onClick={() => {
+										if (selectRecord.find((item: any) => item._id == record._id))
+											setSelectRecord(selectRecord.filter((item: any) => item._id != record._id));
+										else setSelectRecord([...selectRecord, record]);
+									}}
+								></div>
+								<img
+									className="cursor-point user-memory-img-container"
+									src={record.images[0].link}
+									alt="record image"
+									onClick={() => {
+										setTriggerViewMemory(!triggerViewMemory);
+										setViewRecord(record);
+									}}
+								/>
+							</div>
+						);
+				})}
+				{renderEmptySelectionImages(5, selectRecord?.length, "user-memory-img-container")}
 			</div>
-		);
-	};
+		</div>
+	);
+
 	// ------------------------------- Display All Selected User Memories -------------------------------
 
 	// ------------------------------- Display Curation Information -------------------------------
@@ -268,24 +266,22 @@ const CurratedCollection = () => {
 				))}
 				{renderEmptySelectionImages(4, curationImages.length, "upload-img-container")}
 			</div>
-			{curationInformation._id == "" ? (
-				<React.Fragment>
-					<input
-						type="file"
-						name="record-image"
-						id="record-image"
-						className="hide-input"
-						onChange={handleChangeFile}
-						accept="image/png, image/jpeg"
-						multiple
-					/>
-					<label htmlFor="record-image">
-						<img src={uploadImageBtnV1} alt="upload button" className="cursor-point" />
-					</label>
-				</React.Fragment>
-			) : (
-				<React.Fragment></React.Fragment>
-			)}
+
+			<div style={curationInformation._id == "" ? { display: "inherit" } : { display: "none" }}>
+				<input
+					type="file"
+					name="record-image"
+					id="record-image"
+					className="hide-input"
+					onChange={handleChangeFile}
+					accept="image/png, image/jpeg"
+					multiple
+				/>
+				<label htmlFor="record-image">
+					<img src={uploadImageBtnV1} alt="upload button" className="cursor-point" />
+				</label>
+			</div>
+
 			<div className="upload-error">{curationImagesError && <span>{curationImagesError}</span>}</div>
 		</div>
 	);
@@ -327,30 +323,29 @@ const CurratedCollection = () => {
 		}
 	};
 
-	const DisplayCurationInformation = () => {
-		return (
-			<div className="display-curation-info-parent">
-				<UploadImage />
+	const DisplayCurationInformation = () => (
+		<div className="display-curation-info-parent">
+			<UploadImage />
 
-				<input
-					type="text"
-					name="title"
-					placeholder="Title"
-					className="single-line-input-container"
-					value={curationInformation.title}
-					onChange={e => setCurationInformation({ ...curationInformation, title: e.target.value })}
-				/>
+			<input
+				type="text"
+				name="title"
+				placeholder="Title"
+				className="single-line-input-container"
+				value={curationInformation.title}
+				onChange={e => setCurationInformation({ ...curationInformation, title: e.target.value })}
+			/>
 
-				<textarea
-					name="description"
-					placeholder="Description"
-					className="mutli-line-input-container"
-					value={curationInformation.description}
-					onChange={e => setCurationInformation({ ...curationInformation, description: e.target.value })}
-				></textarea>
-			</div>
-		);
-	};
+			<textarea
+				name="description"
+				placeholder="Description"
+				className="mutli-line-input-container"
+				value={curationInformation.description}
+				onChange={e => setCurationInformation({ ...curationInformation, description: e.target.value })}
+			></textarea>
+		</div>
+	);
+
 	// ------------------------------- Display Curation Information -------------------------------
 
 	// ------------------------------- API handling -------------------------------
@@ -462,7 +457,15 @@ const CurratedCollection = () => {
 			<ViewMemoryV3 modalTigger={triggerViewMemory} record={viewRecord} />
 			<DisplayAllCuratedCollection />
 			<TabSelection />
-			{DisplayTab()}
+			<div style={tabSelected == "all memories" ? { display: "inherit" } : { display: "none" }}>
+				<DisplayAllUserMemories />
+			</div>
+			<div style={tabSelected == "selected memories" ? { display: "inherit" } : { display: "none" }}>
+				<DisplayAllSelectedMemories />
+			</div>
+			<div style={tabSelected == "curation information" ? { display: "inherit" } : { display: "none" }}>
+				{DisplayCurationInformation()}
+			</div>
 		</div>
 	);
 };

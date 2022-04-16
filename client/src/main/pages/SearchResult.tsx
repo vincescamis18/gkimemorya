@@ -10,7 +10,7 @@ import NavbarV1 from "../components/headers/NavbarV1";
 import EmptyV1 from "../assets/images/icons/emptyV3.png";
 import DisplayCuratedCollectionV2 from "../components/displayCuratedCollection/DisplayCuratedCollectionV2";
 
-const DisplayAllMemoryV2 = () => {
+const SearchResultPage = () => {
 	const { searchWord } = useParams();
 
 	const [memoryFiltered, setMemoryFiltered] = useState<{ records: IRecordWithCreator[] }>({ records: [] });
@@ -238,29 +238,21 @@ const DisplayAllMemoryV2 = () => {
 				{SideDashboard()}
 
 				<div className="filter-result-container">
-					{showMemory ? (
-						<div>
-							<div className="filter-result-border"></div>
-							<p className="filter-result-title">Memories</p>
-							<DisplayUserAllMemories />
-						</div>
-					) : (
-						<></>
-					)}
+					<div style={showMemory ? { display: "inherit" } : { display: "none" }}>
+						<div className="filter-result-border"></div>
+						<p className="filter-result-title">Memories</p>
+						<DisplayUserAllMemories />
+					</div>
 
-					{showCollection ? (
-						<div>
-							<div className="filter-result-border"></div>
-							<p className="filter-result-title">Curated Stories</p>
-							<DisplayCuratedCollectionV2 curatedCollections={collectionFiltered} />
-						</div>
-					) : (
-						<React.Fragment></React.Fragment>
-					)}
+					<div style={showCollection ? { display: "inherit" } : { display: "none" }}>
+						<div className="filter-result-border"></div>
+						<p className="filter-result-title">Curated Stories</p>
+						<DisplayCuratedCollectionV2 curatedCollections={collectionFiltered} />
+					</div>
 				</div>
 			</div>
 		</React.Fragment>
 	);
 };
 
-export default DisplayAllMemoryV2;
+export default SearchResultPage;

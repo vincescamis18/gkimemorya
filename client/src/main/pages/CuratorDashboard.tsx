@@ -26,21 +26,18 @@ const CuratorDashboard = () => {
 		</React.Fragment>
 	);
 
-	const displaySection = () => {
-		switch (dashboardSelected) {
-			case "memory of the day":
-				return <MemoryOfTheDay />;
-			case "curated collection":
-				return <CuratedCollection />;
-		}
-	};
-
 	return (
 		<React.Fragment>
 			<NavbarV1 />
 			<div className="dashboard-parent">
 				<SideDashboard />
-				{displaySection()}
+
+				<div style={dashboardSelected === "memory of the day" ? { display: "inherit" } : { display: "none" }}>
+					<MemoryOfTheDay />
+				</div>
+				<div style={dashboardSelected === "curated collection" ? { display: "inherit" } : { display: "none" }}>
+					<CuratedCollection />
+				</div>
 			</div>
 		</React.Fragment>
 	);
