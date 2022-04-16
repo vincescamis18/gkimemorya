@@ -36,10 +36,7 @@ stages:
       displayName: 'Install Node.js'
 
     - script: |
-        cd client
-        npm install
-        cd ..
-        npm install
+        npm run pipeline
       displayName: 'npm install, build and test'
 
     - task: ArchiveFiles@2
