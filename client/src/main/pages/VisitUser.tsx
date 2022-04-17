@@ -1,22 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 
 import axios from "axios";
+import { useParams } from "react-router-dom";
 import { IUser } from "../redux/actionSchemas/userSchema";
-import { IRecordWithCreator } from "../redux/actionSchemas/recordSchema";
 
 import NavbarV1 from "../components/headers/NavbarV1";
-import ViewMemoryV2 from "../components/modals/ViewMemoryV2";
 import DisplayAllMemoryV1 from "../components/displayMemories/DisplayAllMemoryV1";
-
-import emptyV1 from "../assets/images/icons/emptyV1.png";
 
 const VisitUser: React.FC = () => {
 	const { id } = useParams();
-
-	const [recordState, setRecordState] = useState<{ records: IRecordWithCreator[] }>({
-		records: [],
-	});
 	const [userState, setUserState] = useState<IUser>({
 		_id: "",
 		surname: "",
@@ -28,17 +20,8 @@ const VisitUser: React.FC = () => {
 		birthday: "",
 	});
 
-	const [selectRecord, setSelectRecord] = useState<IRecordWithCreator>();
-	const [triggerViewMemory, setTriggerViewMemory] = useState(false);
-
 	useEffect(() => {
 		if (id) {
-			// retrive selected user record with creator details
-			axios
-				.get(`/api/records/record-creator/user/${id}`)
-				.then((res: any) => setRecordState({ records: res.data }))
-				.catch(err => console.log("err", err));
-
 			// retrive selected user details
 			axios
 				.get(`/api/userz/details/${id}`)
@@ -46,35 +29,6 @@ const VisitUser: React.FC = () => {
 				.catch(err => console.log(err));
 		}
 	}, []);
-
-	// fill the gap of 4 picture per column design to push the picture at the left side
-	const emptyImages = () => {
-		if (recordState.records.length) {
-			const numberOfEmptySlots = recordState.records.length % 4;
-			const emptySlots = [];
-			for (let a = 0; a < numberOfEmptySlots; a++) emptySlots.push(a);
-			return emptySlots.map((item: any, index: number) => (
-				<img src={emptyV1} alt="image" key={index} className="memory-display-container" />
-			));
-		}
-	};
-
-	const DisplayUserAllMemories = () => (
-		<div className="user-memory-parent">
-			<div className="user-memory-container">
-				{recordState.records.map((record: IRecordWithCreator, index: number) => (
-					<img
-						className="cursor-point memory-display-container"
-						src={record.images[0].link}
-						key={index}
-						alt="empty image"
-						onClick={() => selectMemory(record)}
-					/>
-				))}
-				{emptyImages()}
-			</div>
-		</div>
-	);
 
 	const getAge = () => {
 		if (!userState.birthday) return "";
@@ -91,14 +45,9 @@ const VisitUser: React.FC = () => {
 		return age;
 	};
 
-	const selectMemory = (record: IRecordWithCreator) => {
-		setTriggerViewMemory(!triggerViewMemory);
-		setSelectRecord(record);
-	};
-
-	// if (!userState._id) return <React.Fragment></React.Fragment>;
+	if(!id) return <React.Fragment></React.Fragment>
 	return (
-		<div style={{ }}>
+		<React.Fragment>
 			<NavbarV1 />
 			<div className="user-details-parent-container">
 				<div className="user-details-top-container">
@@ -121,9 +70,8 @@ const VisitUser: React.FC = () => {
 				</div>
 			</div>
 
-			<ViewMemoryV2 modalTigger={triggerViewMemory} record={selectRecord} />
 			<DisplayAllMemoryV1 userId={id} />
-		</div>
+		</React.Fragment>
 	);
 };
 
