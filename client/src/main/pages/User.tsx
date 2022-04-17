@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { RootState } from "../redux/reducers/allReducer";
@@ -42,7 +43,7 @@ const User: React.FC = () => {
 			axios
 				.get(`/api/records/record-count/user/${userState._id}`)
 				.then((res: any) => {
-					if (res.data.count == 0) setUserBadge("");
+					if (res.data.count === 0) setUserBadge("");
 					else if (res.data.count > 0) setUserBadge("Novice Contributor");
 					else if (res.data.count > 100) setUserBadge("Expert Contributor");
 					else if (res.data.count > 1000) setUserBadge("Master Contributor");

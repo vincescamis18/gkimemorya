@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { INewRecordInput } from "../../redux/actionSchemas/recordSchema";
 import uploadImageBtnV1 from "../../assets/images/buttons/uploadImageBtnV1.png";
 import emptyPhotoV1 from "../../assets/images/logo/emptyPhotoV1.png";
@@ -14,7 +15,7 @@ const MultipleImageV2 = (props: IProps) => {
 
 	// remove the display if the value is reset
 	useEffect(() => {
-		if (props.newRecord.images == null) setImages([]);
+		if (props.newRecord.images === null) setImages([]);
 	}, [props.newRecord.images]);
 
 	const handleChangeFile = (e: React.ChangeEvent<HTMLInputElement>) => {

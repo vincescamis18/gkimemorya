@@ -52,8 +52,8 @@ const SearchResultPage = () => {
 
 			memoryFilteredByTitle.records.forEach((item: any) => {
 				if (
-					memoryFilteredByDate.records.find(dateFilted => dateFilted._id == item._id) &&
-					memoryFilteredByLocation.records.find(dateFilted => dateFilted._id == item._id)
+					memoryFilteredByDate.records.find(dateFilted => dateFilted._id === item._id) &&
+					memoryFilteredByLocation.records.find(dateFilted => dateFilted._id === item._id)
 				)
 					combinedFilted.push(item);
 			});
@@ -63,7 +63,7 @@ const SearchResultPage = () => {
 			// only date is filtered
 
 			memoryFilteredByTitle.records.forEach((item: IRecordWithCreator) => {
-				if (memoryFilteredByDate.records.find(dateFilted => dateFilted._id == item._id)) combinedFilted.push(item);
+				if (memoryFilteredByDate.records.find(dateFilted => dateFilted._id === item._id)) combinedFilted.push(item);
 			});
 
 			setMemoryFiltered({ records: combinedFilted });
@@ -71,7 +71,7 @@ const SearchResultPage = () => {
 			// only location is filtered
 
 			memoryFilteredByTitle.records.forEach((item: IRecordWithCreator) => {
-				if (memoryFilteredByLocation.records.find(dateFilted => dateFilted._id == item._id)) combinedFilted.push(item);
+				if (memoryFilteredByLocation.records.find(dateFilted => dateFilted._id === item._id)) combinedFilted.push(item);
 			});
 
 			setMemoryFiltered({ records: combinedFilted });

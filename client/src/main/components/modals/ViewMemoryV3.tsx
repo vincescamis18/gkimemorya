@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+
+import { useSelector } from "react-redux";
 import { RootState } from "../../redux/reducers/allReducer";
 import { IRecordWithCreator } from "../../redux/actionSchemas/recordSchema";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
@@ -43,7 +44,7 @@ const ViewMemoryV3 = (props: IProps) => {
 
 	// Prevent outer scroll to move if the modal is visible
 	useEffect(() => {
-		if (showModal == true) {
+		if (showModal) {
 			const xValue = window.pageXOffset;
 			const yValue = window.pageYOffset;
 			window.onscroll = () => window.scrollTo(xValue, yValue);
@@ -84,7 +85,7 @@ const ViewMemoryV3 = (props: IProps) => {
 				<div className="dot-container-bottom">
 					<div className="dot-container-column">
 						{props.record?.images.map((item, index) => (
-							<div key={index} className={index == page ? "active-dot" : "inactive-dot"}></div>
+							<div key={index} className={index === page ? "active-dot" : "inactive-dot"}></div>
 						))}
 					</div>
 				</div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import axios from "axios";
 import { IRecordWithCreator } from "../redux/actionSchemas/recordSchema";
 import { useParams } from "react-router-dom";
@@ -52,7 +53,7 @@ const CurratedCollection = () => {
 		<div className="all-memory-parent no-select">
 			<div className="all-memory-container">
 				{recordState.records?.map((record: any, index: number) => {
-					if (selectRecord.find((item: any) => item.record._id == record._id))
+					if (selectRecord.find((item: any) => item.record._id === record._id))
 						return (
 							<React.Fragment>
 								<div

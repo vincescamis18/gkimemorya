@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 import interactionPlugin from "@fullcalendar/interaction"; // for selectable
@@ -104,7 +105,7 @@ const MemoryOfTheDay = () => {
 		axios
 			.delete(`api/featured-memory/${selectedFeaturedMemoryId}`)
 			.then(() => {
-				const updatedAllFeaturedMemory = allFeaturedMemories.filter(item => item.id != selectedFeaturedMemoryId);
+				const updatedAllFeaturedMemory = allFeaturedMemories.filter(item => item.id !== selectedFeaturedMemoryId);
 				setAllFeaturedMemories(updatedAllFeaturedMemory);
 				setIsLoading(false);
 			})
@@ -114,7 +115,7 @@ const MemoryOfTheDay = () => {
 	const handleViewFeaturedMemory = (target: any) => {
 		if (target.event.id) {
 			// get the record details of selected featuredmemory from allFeaturedMemories
-			let selectedMemory: any = allFeaturedMemories.filter(item => item.id == target.event.id);
+			let selectedMemory: any = allFeaturedMemories.filter(item => item.id === target.event.id);
 			if (selectedMemory.length > 0) {
 				setSelectedFeaturedMemoryId(target.event.id);
 				setViewFeaturedMemoy(selectedMemory[0].record);

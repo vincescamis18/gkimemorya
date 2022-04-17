@@ -14,11 +14,11 @@ const CuratorDashboard = () => {
 					<span>Curator dashboard</span>
 				</div>
 				<div className="side-menu-option no-select" onClick={() => setDashboardSelected("memory of the day")}>
-					{dashboardSelected == "memory of the day" ? <span className="side-menu-option-selected"></span> : <></>}
+					{dashboardSelected === "memory of the day" ? <span className="side-menu-option-selected"></span> : <></>}
 					<span>Memory of the Day</span>
 				</div>
 				<div className="side-menu-option no-select" onClick={() => setDashboardSelected("curated collection")}>
-					{dashboardSelected == "curated collection" ? <span className="side-menu-option-selected"></span> : <></>}
+					{dashboardSelected === "curated collection" ? <span className="side-menu-option-selected"></span> : <></>}
 					<span>Curated Collection</span>
 				</div>
 			</div>

@@ -93,9 +93,9 @@ const CurratedCollection = () => {
 							<input
 								type="button"
 								value="Create New Collection"
-								onClick={() => (curationSelected != null ? resetAllInputCollectionDetails() : console.log(""))}
+								onClick={() => (curationSelected !== null ? resetAllInputCollectionDetails() : console.log(""))}
 								className={`cursor-point create-collection-btn-container ${
-									curationInformation._id == "" ? "create-collection-btn-selected" : "create-collection-btn-idle"
+									curationInformation._id === "" ? "create-collection-btn-selected" : "create-collection-btn-idle"
 								}`}
 							/>
 						</div>
@@ -103,7 +103,7 @@ const CurratedCollection = () => {
 						{allCuratedCollection?.map((collection: any, index: number) => (
 							<div
 								className={`cursor-point colection-container ${
-									collection._id == curationInformation._id ? "colection-container-selected" : "colection-container-idle"
+									collection._id === curationInformation._id ? "colection-container-selected" : "colection-container-idle"
 								}`}
 								onClick={() => handleCollectionSelection(collection)}
 								key={index}
@@ -143,7 +143,7 @@ const CurratedCollection = () => {
 				records: allSelectedRecord,
 				creator: userState._id,
 			};
-			if (curationInformation._id == "") createCompiledMemory(newItem);
+			if (curationInformation._id === "") createCompiledMemory(newItem);
 			else updateCompiledRecord({ _id: curationInformation._id, updItem: newItem });
 		} else console.log("Missing Field");
 	};
@@ -152,15 +152,15 @@ const CurratedCollection = () => {
 		<div className="tab-selection-parent">
 			<div className="tab-selection-container">
 				<div className="tab-option" onClick={() => setTabSelected("all memories")}>
-					<span className={tabSelected == "all memories" ? "tab-option-selected" : ""}></span>
+					<span className={tabSelected === "all memories" ? "tab-option-selected" : ""}></span>
 					<span>All Memories</span>
 				</div>
 				<div className="tab-option" onClick={() => setTabSelected("selected memories")}>
-					<span className={tabSelected == "selected memories" ? "tab-option-selected" : ""}></span>
+					<span className={tabSelected === "selected memories" ? "tab-option-selected" : ""}></span>
 					<span>Collected Memories</span>
 				</div>
 				<div className="tab-option" onClick={() => setTabSelected("curation information")}>
-					<span className={tabSelected == "curation information" ? "tab-option-selected" : ""}></span>
+					<span className={tabSelected === "curation information" ? "tab-option-selected" : ""}></span>
 					<span>Information</span>
 				</div>
 			</div>
@@ -177,12 +177,6 @@ const CurratedCollection = () => {
 			</div>
 		</div>
 	);
-
-	const DisplayTab = () => {
-		if (tabSelected == "all memories") return DisplayAllUserMemories();
-		else if (tabSelected == "selected memories") return DisplayAllSelectedMemories();
-		else if (tabSelected == "curation information") return DisplayCurationInformation();
-	};
 	// ------------------------------- Tab Selection -------------------------------
 
 	// ------------------------------- Display All User Memories -------------------------------
@@ -193,11 +187,11 @@ const CurratedCollection = () => {
 					<div key={index} className="select-container">
 						<div
 							className={`cursor-point checkbox-container ${
-								selectRecord.find((item: any) => item._id == record._id) ? "checkbox-active" : ""
+								selectRecord.find((item: any) => item._id === record._id) ? "checkbox-active" : ""
 							}`}
 							onClick={() => {
-								if (selectRecord.find((item: any) => item._id == record._id))
-									setSelectRecord(selectRecord.filter((item: any) => item._id != record._id));
+								if (selectRecord.find((item: any) => item._id === record._id))
+									setSelectRecord(selectRecord.filter((item: any) => item._id !== record._id));
 								else setSelectRecord([...selectRecord, record]);
 							}}
 						></div>
@@ -224,16 +218,16 @@ const CurratedCollection = () => {
 		<div className="all-user-memory-center">
 			<div className="all-user-memory-container">
 				{recordState.records?.map((record: IRecordWithCreator, index: number) => {
-					if (selectRecord.find((item: any) => item._id == record._id))
+					if (selectRecord.find((item: any) => item._id === record._id))
 						return (
 							<div key={index} className="select-container">
 								<div
 									className={`cursor-point checkbox-container ${
-										selectRecord.find((item: any) => item._id == record._id) ? "checkbox-active" : ""
+										selectRecord.find((item: any) => item._id === record._id) ? "checkbox-active" : ""
 									}`}
 									onClick={() => {
-										if (selectRecord.find((item: any) => item._id == record._id))
-											setSelectRecord(selectRecord.filter((item: any) => item._id != record._id));
+										if (selectRecord.find((item: any) => item._id === record._id))
+											setSelectRecord(selectRecord.filter((item: any) => item._id !== record._id));
 										else setSelectRecord([...selectRecord, record]);
 									}}
 								></div>
@@ -267,7 +261,7 @@ const CurratedCollection = () => {
 				{renderEmptySelectionImages(4, curationImages.length, "upload-img-container")}
 			</div>
 
-			<div style={curationInformation._id == "" ? { display: "inherit" } : { display: "none" }}>
+			<div style={curationInformation._id === "" ? { display: "inherit" } : { display: "none" }}>
 				<input
 					type="file"
 					name="record-image"
@@ -457,13 +451,13 @@ const CurratedCollection = () => {
 			<ViewMemoryV3 modalTigger={triggerViewMemory} record={viewRecord} />
 			<DisplayAllCuratedCollection />
 			<TabSelection />
-			<div style={tabSelected == "all memories" ? { display: "inherit" } : { display: "none" }}>
+			<div style={tabSelected === "all memories" ? { display: "inherit" } : { display: "none" }}>
 				<DisplayAllUserMemories />
 			</div>
-			<div style={tabSelected == "selected memories" ? { display: "inherit" } : { display: "none" }}>
+			<div style={tabSelected === "selected memories" ? { display: "inherit" } : { display: "none" }}>
 				<DisplayAllSelectedMemories />
 			</div>
-			<div style={tabSelected == "curation information" ? { display: "inherit" } : { display: "none" }}>
+			<div style={tabSelected === "curation information" ? { display: "inherit" } : { display: "none" }}>
 				{DisplayCurationInformation()}
 			</div>
 		</div>

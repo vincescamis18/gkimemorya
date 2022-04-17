@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import axios from "axios";
 import { IRecordWithCreator } from "../../redux/actionSchemas/recordSchema";
 
@@ -55,7 +56,7 @@ const DisplayAllMemoryV2 = (props: IProps) => {
 				{recordState.records?.map((record: IRecordWithCreator, index: number) => (
 					<div key={index} className="checkbox-memory-container">
 						<div
-							className={` cursor-point checkbox-container ${props.selectRecord?._id == record._id ? "checkbox-active" : ""}`}
+							className={` cursor-point checkbox-container ${props.selectRecord?._id === record._id ? "checkbox-active" : ""}`}
 							onClick={() => (props.setSelectRecord ? props.setSelectRecord(record) : "")}
 						></div>
 						<img

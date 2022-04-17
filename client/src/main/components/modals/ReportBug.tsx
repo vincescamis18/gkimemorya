@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/reducers/allReducer";
 
@@ -30,7 +31,7 @@ const ReportBug = (props: IProps) => {
 
 	// Prevent outer scroll to move if the modal is visible
 	useEffect(() => {
-		if (showModal == true) {
+		if (showModal) {
 			const xValue = window.pageXOffset;
 			const yValue = window.pageYOffset;
 			window.onscroll = () => window.scrollTo(xValue, yValue);
