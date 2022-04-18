@@ -11,7 +11,7 @@
 		"heroku-postbuild": "npm run client-install && npm run build",
 		"start": "cd server && cd dist && node server.js",
 		"server": "cd server  && cd dist && nodemon server.js",
-		"client": "cd client && npm start",
+		"client": "cd client && PORT=443 && npm start",
 		"dev": "concurrently \"npm run server\" \"npm run client\" ",
 		"compile": "tsc -p ./server",
 		"test": "echo \"Error: no test specified\" && exit 1",

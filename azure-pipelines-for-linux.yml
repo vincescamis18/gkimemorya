@@ -17,7 +17,7 @@ variables:
   # Environment name
   environmentName: 'webappmemorya'
 
-  # Agent VM image name#######
+  # Agent VM image name#########
   vmImageName: 'ubuntu-latest'
 
 stages:
@@ -36,10 +36,7 @@ stages:
       displayName: 'Install Node.js'
 
     - script: |
-        cd client
-        npm install
-        cd ..
-        npm install
+        npm run install-client
       displayName: 'npm install, build and test'
 
     - task: ArchiveFiles@2
@@ -76,4 +73,4 @@ stages:
               appName: $(webAppName)
               runtimeStack: 'NODE|16.14'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              startUpCommand: 'npm run dev'
+              startUpCommand: 'npm run client'
