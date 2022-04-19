@@ -43,3 +43,31 @@
 		}
 	}
 }
+
+@media (max-width: 1375px) {
+	.explore {
+		.center-tab-parent {
+			.tab-parent-container {
+				width: 90%;
+			}
+
+			.tab-option-selected {
+				width: 60%;
+			}
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.explore {
+		.center-tab-parent {
+			.tab-option-selected {
+				background-color: red;
+				width: 80%;
+				height: 5px;
+				position: absolute;
+				bottom: 0px;
+			}
+		}
+	}
+}

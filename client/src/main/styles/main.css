@@ -244,6 +244,25 @@
   background-color: #4b4b4b;
 }
 
+@media (max-width: 1375px) {
+  .explore .center-tab-parent .tab-parent-container {
+    width: 90%;
+  }
+  .explore .center-tab-parent .tab-option-selected {
+    width: 60%;
+  }
+}
+
+@media (max-width: 900px) {
+  .explore .center-tab-parent .tab-option-selected {
+    background-color: red;
+    width: 80%;
+    height: 5px;
+    position: absolute;
+    bottom: 0px;
+  }
+}
+
 .home {
   background-image: url("../assets/images/backgrounds/bg-dot.png");
   background-color: #fff;
@@ -2839,6 +2858,12 @@
   text-align: justify;
 }
 
+@media (max-width: 1375px) {
+  .container-width-explore {
+    width: 90%;
+  }
+}
+
 .all-memory-parent {
   background-image: url("../assets/images/backgrounds/bg-dot.png");
   background-color: #fff;
@@ -3319,6 +3344,12 @@
   height: 50px;
   border-radius: 100%;
   margin-right: 20px;
+}
+
+@media (max-width: 1375px) {
+  .center-all-users-parent .user-item {
+    width: 90%;
+  }
 }
 
 .dashboard-memory-of-the-day {
