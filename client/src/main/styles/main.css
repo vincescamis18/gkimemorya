@@ -1040,6 +1040,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 100px;
+  z-index: 2;
 }
 
 .side-menu-parent .side-menu-container {
@@ -1058,13 +1059,8 @@
           align-items: flex-end;
 }
 
-.side-menu-parent .filter-btn {
-  width: 50px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
 .side-menu-parent .add-btn {
+  margin-top: 20px;
   width: 50px;
   height: 50px;
   margin-bottom: 15px;
@@ -1126,35 +1122,77 @@
   border-bottom-right-radius: 15px;
 }
 
-.user-memory-parent {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+@media (max-width: 1375px) {
+  .user-details-top-container {
+    width: 935px;
+  }
+  .user-details-btm-container {
+    width: 935px;
+  }
+  .bio-parent-container {
+    width: 670px;
+  }
+  .img-container {
+    margin-right: 35px;
+  }
 }
 
-.user-memory-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 1335px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-item-align: center;
-      align-self: center;
+@media (max-width: 950px) {
+  .user-details-top-container {
+    width: 735px;
+  }
+  .user-details-btm-container {
+    width: 735px;
+  }
+  .bio-parent-container {
+    width: 470px;
+  }
 }
 
-.memory-display-container {
-  width: 300px;
-  height: 300px;
-  margin-top: 40px;
-  -o-object-fit: cover;
-     object-fit: cover;
+@media (max-width: 750px) {
+  .user-details-top-container {
+    width: 615px;
+  }
+  .user-details-btm-container {
+    width: 615px;
+  }
+  .bio-parent-container {
+    width: 375px;
+  }
+  .user-details-top-left-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    padding: 15px 25px 15px 15px;
+  }
+  .bio-output-container,
+  .name-age-loc-container {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 630px) {
+  .user-details-top-container {
+    width: 435px;
+  }
+  .user-details-btm-container {
+    width: 435px;
+  }
+  .bio-parent-container {
+    width: 225px;
+  }
+  .img-container {
+    width: 200px;
+    height: 200px;
+  }
+  .bio-output-container,
+  .name-age-loc-container {
+    font-size: 10px;
+  }
 }
 
 .view-memory-page-modal-background {
