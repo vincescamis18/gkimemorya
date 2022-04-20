@@ -349,12 +349,38 @@
           justify-content: center;
 }
 
-.home .section-container {
+.home .section-container-01 {
   width: 1335px;
   height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #909090;
+}
+
+.home .section-container-02 {
+  width: 1335px;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #909090;
+}
+
+.home .image-container-bg {
+  background-color: #909090;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .home .memorya-section01-item01-container {
@@ -397,6 +423,154 @@
   background-color: #c8c8c8;
   padding: 50px;
   text-align: justify;
+}
+
+@media (max-width: 1375px) {
+  .home .section-container-01 {
+    width: 935px;
+    height: 700px;
+  }
+  .home .section-container-02 {
+    width: 935px;
+    height: 300px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .home .image-container-bg {
+    width: 935px;
+  }
+  .home .memorya-section01-item01-container {
+    width: 935px;
+    height: 700px;
+  }
+  .home .memorya-section01-item02-container {
+    width: 600px;
+    height: 500px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .home .memorya-section02-item01-container {
+    width: 935px;
+    height: 300px;
+  }
+  .home .memorya-section02-item02-container {
+    width: 300px;
+    height: 300px;
+  }
+  .home .memorya-section02-item03-container {
+    width: 935px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 950px) {
+  .home .section-container-01 {
+    width: 735px;
+    height: 700px;
+  }
+  .home .section-container-02 {
+    width: 735px;
+    height: 300px;
+  }
+  .home .image-container-bg {
+    width: 735px;
+  }
+  .home .memorya-section01-item01-container {
+    width: 735px;
+    height: 700px;
+  }
+  .home .memorya-section01-item02-container {
+    width: 350px;
+    height: 500px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .home .memorya-section02-item01-container {
+    width: 735px;
+    height: 300px;
+  }
+  .home .memorya-section02-item02-container {
+    width: 300px;
+    height: 300px;
+  }
+  .home .memorya-section02-item03-container {
+    width: 735px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 750px) {
+  .home .section-container-01 {
+    width: 615px;
+    height: 700px;
+  }
+  .home .section-container-02 {
+    width: 615px;
+    height: 300px;
+  }
+  .home .image-container-bg {
+    width: 615px;
+  }
+  .home .memorya-section01-item01-container {
+    width: 615px;
+    height: 700px;
+  }
+  .home .memorya-section01-item02-container {
+    width: 300px;
+    height: 500px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .home .memorya-section02-item01-container {
+    width: 615px;
+    height: 300px;
+  }
+  .home .memorya-section02-item02-container {
+    width: 300px;
+    height: 300px;
+  }
+  .home .memorya-section02-item03-container {
+    width: 615px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 630px) {
+  .home .section-container-01 {
+    width: 435px;
+    height: 700px;
+  }
+  .home .section-container-02 {
+    width: 435px;
+    height: 300px;
+  }
+  .home .image-container-bg {
+    width: 435px;
+  }
+  .home .memorya-section01-item01-container {
+    width: 435px;
+    height: 700px;
+  }
+  .home .memorya-section01-item02-container {
+    width: 170px;
+    height: 500px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .home .memorya-section02-item01-container {
+    width: 435px;
+    height: 500px;
+  }
+  .home .memorya-section02-item02-container {
+    width: 300px;
+    height: 300px;
+  }
+  .home .memorya-section02-item03-container {
+    width: 435px;
+    height: 500px;
+  }
 }
 
 .register {
