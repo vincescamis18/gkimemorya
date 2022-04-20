@@ -178,7 +178,79 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 50px;
+  padding: 0px 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 1375px) {
+  .display-curated-collection-parent .curated-collection-container {
+    width: 935px;
+  }
+  .display-curated-collection-parent .description-container {
+    width: 935px;
+  }
+  .display-curated-collection-parent .curated-collection-container:hover .description-section {
+    width: 450px;
+  }
+  .display-curated-collection-parent .description-section {
+    width: 450px;
+  }
+}
+
+@media (max-width: 950px) {
+  .display-curated-collection-parent .curated-collection-container {
+    width: 735px;
+  }
+  .display-curated-collection-parent .description-container {
+    width: 735px;
+  }
+  .display-curated-collection-parent .curated-collection-container:hover .description-section {
+    width: 350px;
+  }
+  .display-curated-collection-parent .description-section {
+    width: 350px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 750px) {
+  .display-curated-collection-parent .curated-collection-container {
+    width: 615px;
+  }
+  .display-curated-collection-parent .description-container {
+    width: 615px;
+  }
+  .display-curated-collection-parent .curated-collection-container:hover .description-section {
+    width: 300px;
+  }
+  .display-curated-collection-parent .description-section {
+    width: 300px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 630px) {
+  .display-curated-collection-parent .curated-collection-container {
+    width: 435px;
+    height: 400px;
+  }
+  .display-curated-collection-parent .description-container {
+    width: 435px;
+    height: 400px;
+  }
+  .display-curated-collection-parent .curated-collection-container:hover .description-section {
+    width: 300px;
+    height: 400px;
+  }
+  .display-curated-collection-parent .description-section {
+    width: 300px;
+    height: 400px;
+  }
+  .display-curated-collection-parent .curated-collection-display-container {
+    height: 400px;
+  }
 }
 
 .explore {
