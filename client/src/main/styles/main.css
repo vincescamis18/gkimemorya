@@ -3785,6 +3785,78 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 1375px) {
+  .display-memory-of-the-day-parent .memory-of-the-day-container {
+    width: 935px;
+  }
+  .display-memory-of-the-day-parent .description-container {
+    width: 935px;
+  }
+  .display-memory-of-the-day-parent .memory-of-the-day-container:hover .description-section {
+    width: 450px;
+  }
+  .display-memory-of-the-day-parent .description-section {
+    width: 450px;
+  }
+}
+
+@media (max-width: 950px) {
+  .display-memory-of-the-day-parent .memory-of-the-day-container {
+    width: 735px;
+  }
+  .display-memory-of-the-day-parent .description-container {
+    width: 735px;
+  }
+  .display-memory-of-the-day-parent .memory-of-the-day-container:hover .description-section {
+    width: 350px;
+  }
+  .display-memory-of-the-day-parent .description-section {
+    width: 350px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 750px) {
+  .display-memory-of-the-day-parent .memory-of-the-day-container {
+    width: 615px;
+  }
+  .display-memory-of-the-day-parent .description-container {
+    width: 615px;
+  }
+  .display-memory-of-the-day-parent .memory-of-the-day-container:hover .description-section {
+    width: 300px;
+  }
+  .display-memory-of-the-day-parent .description-section {
+    width: 300px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 630px) {
+  .display-memory-of-the-day-parent .memory-of-the-day-display-container {
+    height: 400px;
+  }
+  .display-memory-of-the-day-parent .memory-of-the-day-container {
+    width: 435px;
+    height: 400px;
+  }
+  .display-memory-of-the-day-parent .description-container {
+    width: 435px;
+    height: 400px;
+  }
+  .display-memory-of-the-day-parent .memory-of-the-day-container:hover .description-section {
+    width: 300px;
+    height: 400px;
+  }
+  .display-memory-of-the-day-parent .description-section {
+    width: 300px;
+    height: 400px;
+  }
 }
 
 .center-all-users-parent {
