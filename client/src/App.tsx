@@ -22,7 +22,7 @@ import CuratorDashboard from "./main/pages/CuratorDashboard";
 import CuratedCollection from "./main/pages/ViewCuratedCollection";
 import MemoryView from "./main/pages/MemoryView";
 import SearchResult from "./main/pages/SearchResult";
-import PrivacyPolivy from "./main/pages/PrivacyPolivy";
+import PrivacyPolicy from "./main/pages/PrivacyPolicy";
 
 import ScrollToTop from "./main/utilities/scrollToTop";
 
@@ -62,7 +62,7 @@ function App() {
 				<Route path="/dashboard" element={<CuratorDashboard />} />
 				<Route path="/collection/:id" element={<CuratedCollection />} />
 				<Route path="/search/:searchWord" element={<SearchResult />} />
-				<Route path="/privacy-policy" element={<PrivacyPolivy />} />
+				<Route path="/privacy-policy" element={<PrivacyPolicy />} />
 			</Routes>
 		</HashRouter>
 	);
