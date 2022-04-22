@@ -1,10 +1,10 @@
-import React from "react";import NavbarV1 from "../components/headers/NavbarV1";
+import React from "react";
+
 import DisplayMemoryOfTheDayV1 from "../components/displayMemories/DisplayMemoryOfTheDayV1";
 
 const Home: React.FC = () => {
 	return (
 		<div className="home">
-			<NavbarV1 />
 			<DisplayMemoryOfTheDayV1 />
 			<div className="center">
 				<div className="section-container-01">

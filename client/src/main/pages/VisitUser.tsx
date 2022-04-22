@@ -4,7 +4,6 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { IUser } from "../redux/actionSchemas/userSchema";
 
-import NavbarV1 from "../components/headers/NavbarV1";
 import DisplayAllMemoryV1 from "../components/displayMemories/DisplayAllMemoryV1";
 
 const VisitUser: React.FC = () => {
@@ -48,7 +47,6 @@ const VisitUser: React.FC = () => {
 	if(!id) return <React.Fragment></React.Fragment>
 	return (
 		<React.Fragment>
-			<NavbarV1 />
 			<div className="user-details-parent-container">
 				<div className="user-details-top-container">
 					<div className="user-details-top-left-container">

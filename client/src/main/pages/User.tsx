@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { RootState } from "../redux/reducers/allReducer";
 
-import NavbarV1 from "../components/headers/NavbarV1";
 import EditProfileV1 from "../components/modals/EditProfileModalV1";
 import ReportBug from "../components/modals/ReportBug";
 import DisplayAllMemoryV1 from "../components/displayMemories/DisplayAllMemoryV1";
@@ -86,7 +85,6 @@ const User: React.FC = () => {
 	if (!userState._id) return <React.Fragment></React.Fragment>;
 	return (
 		<React.Fragment>
-			<NavbarV1 />
 			<div className="user-details-parent-container">
 				<div className="user-details-top-container">
 					<div className="user-details-top-left-container">

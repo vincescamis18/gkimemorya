@@ -4,7 +4,6 @@ import axios from "axios";
 import { IRecordWithCreator } from "../redux/actionSchemas/recordSchema";
 import { useParams } from "react-router-dom";
 
-import NavbarV1 from "../components/headers/NavbarV1";
 import ViewMemoryV2 from "../components/modals/ViewMemoryV2";
 
 import EmptyV1 from "../assets/images/icons/emptyV3.png";
@@ -111,9 +110,7 @@ const CurratedCollection = () => {
 
 	return (
 		<React.Fragment>
-			<NavbarV1 />
 			<DisplayCollectionInformation />
-
 			<ViewMemoryV2 modalTigger={triggerViewMemory} record={viewRecord} />
 			<DisplayUserAllMemories />
 		</React.Fragment>

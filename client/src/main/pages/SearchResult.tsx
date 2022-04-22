@@ -5,7 +5,6 @@ import { IRecordWithCreator } from "../redux/actionSchemas/recordSchema";
 import { useParams } from "react-router-dom";
 
 import ViewMemoryV2 from "../components/modals/ViewMemoryV2";
-import NavbarV1 from "../components/headers/NavbarV1";
 
 import EmptyV1 from "../assets/images/icons/emptyV3.png";
 import DisplayCuratedCollectionV2 from "../components/displayCuratedCollection/DisplayCuratedCollectionV2";
@@ -232,7 +231,6 @@ const SearchResultPage = () => {
 
 	return (
 		<React.Fragment>
-			<NavbarV1 />
 			<ViewMemoryV2 modalTigger={triggerViewMemory} record={viewRecord} />
 			<div className="search-result-parent">
 				{SideDashboard()}

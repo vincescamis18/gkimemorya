@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/reducers/allReducer";
 import { createRecord } from "../redux/actions/recordAction";
@@ -6,7 +7,6 @@ import { INewRecordInput } from "../redux/actionSchemas/recordSchema";
 import { useNavigate } from "react-router-dom";
 
 import MutipleImageV2 from "../components/inputs/MultipleImageV2";
-import NavbarV1 from "../components/headers/NavbarV1";
 import LoadingScreeenV1 from "../components/loadingScreens/loadingScreeenV1";
 
 import addMemoryV1 from "../assets/images/logo/addMemoryV1.png";
@@ -83,7 +83,6 @@ const AddMemory: React.FC = () => {
 
 	return (
 		<div className="upload-memory">
-			<NavbarV1 />
 			<LoadingScreeenV1 modalTigger={recordState.isLoading} />
 			<div className="form-center">
 				<div className="form-container">
