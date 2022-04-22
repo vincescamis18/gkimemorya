@@ -1,0 +1,88 @@
+.origin{
+    background-image: url("../assets/images/backgrounds/bg-dot.png");
+    background-color: #fff;
+
+    a{
+        color: rgb(97, 181, 236);
+    }
+
+    a:hover{
+        color: rgb(67, 123, 160);
+    }
+
+    .container{
+        width: 60%;
+        margin-left: 10em;
+        margin-bottom: 10em;
+
+        h1{
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        h2{
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        h3{
+            margin-top: 0.7em;
+            margin-bottom: 0.5em;
+        }
+
+        p{
+            line-height: 1.5em;
+        }
+
+        ul{
+            li{
+                margin-top: 1em;
+                margin-left: 2em;
+            }
+        }
+    }
+
+    .contents-container{
+        visibility: hidden;
+        width: 20%;
+
+        position: fixed;
+        top: 10em;
+        right: 4em;
+
+        background-color: white;
+        padding: 2em;
+        border-radius: 0.5em;
+
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+        
+        li{
+            list-style: none;
+            margin-top: 0.6em;
+        }
+
+        ul{
+            li{
+                margin-left: 1.5em;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 980px) {
+        .container{
+            margin-left: 0em;
+            margin: auto;
+            margin-bottom: 10em;
+
+            width: 80%;
+        }
+    }
+
+    @media only screen and (min-width: 1199px){
+        .contents-container{
+            visibility: visible;
+        }
+    }
+
+}

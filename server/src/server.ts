@@ -149,5 +149,6 @@ app.get("*", (req, res) => {
 });
 
 // Deploying server to available port
-const PORT = process.env.PORT || 5000;
+//const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 server.listen(PORT, () => console.log(`[S:00] server started at port ${PORT}`));
