@@ -10,7 +10,7 @@
 		"dev-server": "cd server  && cd dist && nodemon server.js",
 		"dev-client": "cd client && npm start",
 		"development": "concurrently \"npm run dev-server\" \"npm run dev-client\" ",
-		"install-client": "cd client && npm install && cd .. && npm install && cd client && npm run build && cd ..",
+		"install-client": "cd client && npm rebuild && npm install && cd .. && npm install && cd client && npm run build && cd ..",
 		"build": "cd client && npm run build",
 		"start": "cd server && cd dist && node server.js",
 		"server": "cd server  && cd dist && nodemon server.js",
