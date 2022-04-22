@@ -3255,6 +3255,202 @@
   }
 }
 
+.navbar-parent-v2 {
+  width: 100%;
+  height: 90px;
+  background-color: #e8d5b9;
+}
+
+.navbar-parent-v2 .navbar-container {
+  width: 100%;
+  height: 90px;
+  background-color: #a68e6c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 150px;
+  position: fixed;
+  z-index: 2;
+}
+
+.navbar-parent-v2 .logo {
+  width: 200px;
+  height: 50px;
+  margin: 0px 20px;
+  background-color: #fff;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.navbar-parent-v2 .search-container {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+}
+
+.navbar-parent-v2 .search-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0px 15px;
+}
+
+.navbar-parent-v2 .search-input {
+  width: 550px;
+  height: 50px;
+  background-color: #fff;
+  border: 0px solid black;
+  margin: 0px 25px 0px 0px;
+}
+
+.navbar-parent-v2 .right-items-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-parent-v2 .home-icon,
+.navbar-parent-v2 .compass-icon,
+.navbar-parent-v2 .unregistered-profile-icon {
+  width: 31px;
+  height: 31px;
+  margin: 0px 00px 0px 20px;
+}
+
+.navbar-parent-v2 .logo:hover,
+.navbar-parent-v2 .home-icon:hover,
+.navbar-parent-v2 .compass-icon:hover,
+.navbar-parent-v2 .unregistered-profile-icon:hover {
+  cursor: pointer;
+}
+
+.navbar-parent-v2 .profile-picture {
+  width: 41px;
+  height: 41px;
+  margin: 0px -20px 0px 20px;
+  border-radius: 100px;
+  background-color: #fff;
+  z-index: 3;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.navbar-parent-v2 .dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.navbar-parent-v2 .dropdown .dropbtn {
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  outline: none;
+  margin: 0;
+  background-color: #fff;
+  padding: 6px 0px 6px 0px;
+  min-width: 150px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.navbar-parent-v2 .dropdown:hover .dropbtn {
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 20px;
+}
+
+.navbar-parent-v2 .dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 150px;
+  z-index: 2;
+}
+
+.navbar-parent-v2 .option {
+  border-top: 2px solid #ddd;
+  background-color: #fff;
+  float: none;
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px 8px 8px 15px;
+}
+
+.navbar-parent-v2 .last-option {
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.navbar-parent-v2 .dropdown-content img {
+  margin-right: 10px;
+}
+
+.navbar-parent-v2 .option:hover {
+  background-color: #b4b4b4;
+  cursor: pointer;
+}
+
+.navbar-parent-v2 .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.navbar-parent-v2 input:focus,
+.navbar-parent-v2 select:focus,
+.navbar-parent-v2 textarea:focus,
+.navbar-parent-v2 button:focus {
+  outline: none;
+}
+
+@media (max-width: 1500px) {
+  .navbar-parent-v2 .navbar-container {
+    padding: 0px 0px;
+  }
+  .navbar-parent-v2 .dropdown {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar-parent-v2 .navbar-container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .navbar-parent-v2 .search-container {
+    display: none;
+  }
+  .navbar-parent-v2 .search-icon {
+    display: none;
+  }
+  .navbar-parent-v2 .search-input {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar-parent-v2 .home-icon,
+  .navbar-parent-v2 .compass-icon {
+    display: none;
+  }
+}
+
 .container-top-bottom-margin {
   margin-top: 40px;
   margin-bottom: 100px;
