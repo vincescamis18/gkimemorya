@@ -145,7 +145,7 @@ const ViewMemoryV3 = (props: IProps) => {
 							</div>
 						</div>
 
-						<p className="title">{props.record?.title}</p>
+						<p className="memory-title">{props.record?.title}</p>
 						<div className="border"></div>
 						<div className="owner-date-container">
 							<p className="light-text">{props.record?.owner}</p>

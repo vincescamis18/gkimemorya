@@ -177,7 +177,7 @@
 			z-index: 2;
 		}
 
-		.title {
+		.memory-title {
 			font-size: 24px;
 			font-weight: bold;
 			margin-top: 20px;
@@ -256,6 +256,372 @@
 			max-height: 100px;
 			padding: 10px;
 			width: 85%;
+		}
+	}
+}
+
+.view-memory-modal-v3-background {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.25);
+	z-index: 2;
+
+	.view-memory-modal-container {
+		position: fixed;
+		margin-top: 45px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.close-btn {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 55px;
+		height: 55px;
+		z-index: 1;
+	}
+
+	.back-arrow:hover,
+	.next-arrow:hover,
+	.close-btn:hover {
+		cursor: pointer;
+	}
+
+	.back-arrow:active,
+	.next-arrow:active,
+	.close-btn:active {
+		opacity: 0.8;
+	}
+
+	.image-details-container {
+		display: flex;
+
+		.image-container {
+			width: 800px;
+			height: 600px;
+			background-color: black;
+
+			.image-record {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+			.multi-image-container {
+				width: 100%;
+				height: 100%;
+				position: relative;
+			}
+			.back-arrow {
+				position: absolute;
+				left: 20px;
+				top: 283px;
+			}
+
+			.next-arrow {
+				position: absolute;
+				right: 20px;
+				top: 283px;
+			}
+
+			.dot-container-middle {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.dot-container-bottom {
+				position: absolute;
+				bottom: 10px;
+			}
+
+			.dot-container-column {
+				display: flex;
+			}
+
+			.active-dot {
+				width: 10px;
+				height: 10px;
+				background-color: white;
+				border-radius: 100%;
+				margin: 0px 5px;
+			}
+
+			.inactive-dot {
+				width: 10px;
+				height: 10px;
+				background-color: rgba(255, 255, 255, 0.5);
+				border-radius: 100%;
+				margin: 0px 5px;
+			}
+		}
+	}
+
+	.details-container {
+		width: 400px;
+		height: 545px;
+		background-color: white;
+		padding: 20px 20px 0px 20px;
+		overflow-y: scroll;
+		background-color: white;
+
+		.showEdit {
+			display: block;
+			margin-top: 6px;
+			width: 50px;
+			padding: 5px 0px;
+			background-color: rgb(99, 99, 99);
+			text-align: center;
+			color: white;
+		}
+
+		.hideEdit {
+			display: none;
+		}
+
+		.picture-name-menu-container {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.picture-name-container {
+			display: flex;
+			align-items: center;
+		}
+
+		.display-picture {
+			width: 50px;
+			height: 50px;
+			background-color: gray;
+			object-fit: cover;
+			border-radius: 100%;
+			margin-right: 10px;
+		}
+
+		.mini-menu-container {
+			justify-items: center;
+			text-align: right;
+		}
+
+		.mini-menu-container:hover .menu-item {
+			display: block;
+			border: 1px solid black;
+			width: 150px;
+			padding: 5px 0px;
+			background-color: rgb(99, 99, 99);
+			text-align: center;
+			color: white;
+		}
+
+		.mini-menu-option-container {
+			position: absolute;
+			right: 35px;
+			padding-top: 30px;
+		}
+
+		.menu-item {
+			display: none;
+		}
+
+		.mini-menu-icon {
+			color: gray;
+			padding: 4px;
+			text-align: right;
+			border-radius: 100%;
+			z-index: 2;
+		}
+
+		.memory-title {
+			font-size: 24px;
+			font-weight: bold;
+			margin-top: 20px;
+		}
+
+		.border {
+			width: 100%;
+			height: 1px;
+			background-color: black;
+		}
+
+		.owner-date-container {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.light-text {
+			font-size: 13px;
+			font-weight: light;
+		}
+
+		.description-text {
+			margin-top: 20px;
+			font-size: 15px;
+			font-weight: 500;
+		}
+
+		.comment-view-container {
+			display: flex;
+			margin: 10px 0px;
+		}
+
+		.comment-view-user {
+			width: 35px;
+			height: 35px;
+			background-color: gray;
+			object-fit: cover;
+			border-radius: 100%;
+			margin-right: 5px;
+		}
+
+		.comment-view-name-msg {
+			background-color: rgb(240, 240, 240);
+			width: 100%;
+			padding: 5px 10px;
+			border-radius: 15px;
+			overflow-x: hidden;
+			overflow-wrap: break-word;
+		}
+
+		.comment-input-container {
+			display: flex;
+			position: absolute;
+			z-index: 3;
+			width: 400px;
+			background-color: rgb(230, 230, 230);
+			padding: 10px 20px;
+			bottom: 0px;
+			right: 0px;
+			height: max-content;
+		}
+
+		.comment-input-user {
+			width: 35px;
+			height: 35px;
+			background-color: gray;
+			object-fit: cover;
+			border-radius: 100%;
+			margin-right: 5px;
+		}
+
+		.comment-input-msg {
+			resize: none;
+			overflow: hidden;
+			height: 37px;
+			max-height: 100px;
+			padding: 10px;
+			width: 85%;
+		}
+	}
+}
+
+@media (max-width: 1250px) {
+	.view-memory-modal-v3-background {
+		.image-details-container {
+			.image-container {
+				width: 1100px;
+			}
+		}
+
+		.details-container {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 1150px) {
+	.view-memory-modal-v3-background {
+		.image-details-container {
+			.image-container {
+				width: 1000px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1050px) {
+	.view-memory-modal-v3-background {
+		.image-details-container {
+			.image-container {
+				width: 900px;
+			}
+		}
+	}
+}
+
+@media (max-width: 950px) {
+	.view-memory-modal-v3-background {
+		.image-details-container {
+			.image-container {
+				width: 800px;
+			}
+		}
+	}
+}
+
+@media (max-width: 850px) {
+	.view-memory-modal-v3-background {
+		.image-details-container {
+			.image-container {
+				width: 700px;
+			}
+		}
+	}
+}
+
+@media (max-width: 750px) {
+	.view-memory-modal-v3-background {
+		.image-details-container {
+			.image-container {
+				width: 600px;
+			}
+		}
+	}
+}
+
+@media (max-width: 650px) {
+	.view-memory-modal-v3-background {
+		.image-details-container {
+			.image-container {
+				width: 500px;
+			}
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.view-memory-modal-v3-background {
+		.image-details-container {
+			.image-container {
+				width: 400px;
+			}
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	.view-memory-modal-v3-background {
+		.image-details-container {
+			.image-container {
+				width: 300px;
+			}
+		}
+	}
+}
+
+@media (max-width: 350px) {
+	.view-memory-modal-v3-background {
+		.image-details-container {
+			.image-container {
+				width: 200px;
+			}
 		}
 	}
 }

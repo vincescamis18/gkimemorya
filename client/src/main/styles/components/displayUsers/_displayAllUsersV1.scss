@@ -39,3 +39,11 @@
 		margin-right: 20px;
 	}
 }
+
+@media (max-width: 1375px) {
+	.center-all-users-parent {
+		.user-item {
+			width: 90%;
+		}
+	}
+}

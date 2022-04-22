@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-import NavbarV1 from "../components/headers/NavbarV1";
 import DisplayAllMemoryV1 from "../components/displayMemories/DisplayAllMemoryV1";
 import DisplayMemoryOfTheDayV1 from "../components/displayMemories/DisplayMemoryOfTheDayV1";
 
@@ -49,7 +48,6 @@ const Explore: React.FC = () => {
 
 	return (
 		<div className="explore">
-			<NavbarV1 />
 			<DisplayMemoryOfTheDayV1 />
 			<DisplayAllCuratedCollection />
 			<DisplayAllMemoryV1 userId={""} />

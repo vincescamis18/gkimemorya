@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { RootState } from "../redux/reducers/allReducer";
 
-import NavbarV1 from "../components/headers/NavbarV1";
 import EditProfileV1 from "../components/modals/EditProfileModalV1";
 import ReportBug from "../components/modals/ReportBug";
 import DisplayAllMemoryV1 from "../components/displayMemories/DisplayAllMemoryV1";
@@ -40,7 +39,6 @@ const User: React.FC = () => {
 	const SideMenu = () => (
 		<div className="side-menu-parent no-select">
 			<div className="side-menu-container">
-				<img src={filterBtnV1} alt="filter" className="cursor-point filter-btn" />
 				<img src={addBtnV1} alt="add" className="cursor-point add-btn" onClick={() => navigate("/upload-memory")} />
 				<div className="information-tigger-option-container">
 					<img src={questionV1} className="information-trigger" />
@@ -84,10 +82,9 @@ const User: React.FC = () => {
 		return age;
 	};
 
-	if(!userState._id) return <React.Fragment></React.Fragment>
+	if (!userState._id) return <React.Fragment></React.Fragment>;
 	return (
 		<React.Fragment>
-			<NavbarV1 />
 			<div className="user-details-parent-container">
 				<div className="user-details-top-container">
 					<div className="user-details-top-left-container">

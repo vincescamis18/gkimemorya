@@ -8,7 +8,6 @@ import { FacebookShareButton, TwitterShareButton } from "react-share";
 import { fetchComment, createComment, commentReset } from "../redux/actions/commentAction";
 
 import ReportCotent from "../components/modals/ReportContent";
-import NavbarV1 from "../components/headers/NavbarV1";
 
 import arrowLeftV1 from "../assets/images/icons/arrowLeftV1.png";
 import arrowRightV1 from "../assets/images/icons/arrowRightV1.png";
@@ -185,7 +184,6 @@ const MemoryView = () => {
 	if (recordState === null) return <React.Fragment></React.Fragment>;
 	return (
 		<React.Fragment>
-			<NavbarV1 />
 			<div className="view-memory-page-modal-background">
 				<div className="view-memory-modal-container">
 					<ReportCotent modalTigger={triggerReportContent} recordId={recordState?._id} />

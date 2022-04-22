@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import NavbarV1 from "../components/headers/NavbarV1";
 import MemoryOfTheDay from "../components/curatorDashboard/MemoryOfTheDay";
 import CuratedCollection from "../components/curatorDashboard/CuratedCollection";
 
@@ -28,7 +27,6 @@ const CuratorDashboard = () => {
 
 	return (
 		<React.Fragment>
-			<NavbarV1 />
 			<div className="dashboard-parent">
 				<SideDashboard />
 

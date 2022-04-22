@@ -24,6 +24,8 @@ import MemoryView from "./main/pages/MemoryView";
 import SearchResult from "./main/pages/SearchResult";
 import PrivacyPolicy from "./main/pages/PrivacyPolicy";
 
+import NavbarV2 from "./main/components/headers/NavbarV2";
+
 import ScrollToTop from "./main/utilities/scrollToTop";
 
 function App() {
@@ -45,6 +47,7 @@ function App() {
 	return (
 		<HashRouter>
 			<ScrollToTop />
+			<NavbarV2 />
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/Origin" element={<Origin />} />

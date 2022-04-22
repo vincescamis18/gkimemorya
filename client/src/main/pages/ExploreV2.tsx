@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import NavbarV1 from "../components/headers/NavbarV1";
 import DisplayAllMemoryV1 from "../components/displayMemories/DisplayAllMemoryV1";
 import DisplayAllUsersV1 from "../components/displayUsers/DisplayAllUsersV1";
 import DisplayCuratedCollectionV1 from "../components/displayCuratedCollection/DisplayCuratedCollectionV1";
@@ -29,7 +28,6 @@ const ExploreV2: React.FC = () => {
 
 	return (
 		<div className="explore">
-			<NavbarV1 />
 			<TabSelection />
 
 			<span style={selectedTab === "Memories" ? { display: "inherit" } : { display: "none" }}>
