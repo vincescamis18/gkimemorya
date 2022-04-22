@@ -5,7 +5,7 @@ import googleBtn from "../assets/images/buttons/googleV1.png";
 
 const Register: React.FC = () => {
 	// set the origin on both development and production
-	const origin = useRef(window.location.origin == "http://localhost:3000" ? "http://localhost:5000" : window.location.origin);
+	const origin = useRef(window.location.origin === "http://localhost:3000" ? "http://localhost:5000" : window.location.origin);
 
 	const googleAuth = () => window.open(`${origin.current}/auth/google`, "_self");
 	// const facebookAuth = () => window.open(`${origin.current}/auth/facebook`, "_self");

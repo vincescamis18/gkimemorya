@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/reducers/allReducer";
 import { updateUser, updateUserWithoutProfilePicture } from "../../redux/actions/userAction";
@@ -41,7 +42,7 @@ const EditProfile = (props: IProps) => {
 
 	// Prevent outer scroll to move if the modal is visible
 	useEffect(() => {
-		if (showModal == true) {
+		if (showModal) {
 			const xValue = window.pageXOffset;
 			const yValue = window.pageYOffset;
 			window.onscroll = () => window.scrollTo(xValue, yValue);

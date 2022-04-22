@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/reducers/allReducer";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
@@ -48,7 +49,7 @@ const MemoryView = () => {
 
 	// Prevent outer scroll to move if the modal is visible
 	useEffect(() => {
-		if (showModal == true) {
+		if (showModal) {
 			const xValue = window.pageXOffset;
 			const yValue = window.pageYOffset;
 			window.onscroll = () => window.scrollTo(xValue, yValue);
@@ -91,7 +92,7 @@ const MemoryView = () => {
 				<div className="dot-container-bottom">
 					<div className="dot-container-column">
 						{recordState?.images.map((item: any, index: number) => (
-							<div key={index} className={index == page ? "active-dot" : "inactive-dot"}></div>
+							<div key={index} className={index === page ? "active-dot" : "inactive-dot"}></div>
 						))}
 					</div>
 				</div>
@@ -111,7 +112,7 @@ const MemoryView = () => {
 				if (commentInput.scrollHeight <= 105) {
 					details.style.height = "545px";
 					// add for added white space from scroll height
-					if (commentInput.scrollHeight == 105) details.style.height = `${details.clientHeight + 3}px`;
+					if (commentInput.scrollHeight === 105) details.style.height = `${details.clientHeight + 3}px`;
 					details.style.height = `${details.clientHeight - commentInput.scrollHeight + 37}px`;
 				}
 
@@ -123,7 +124,7 @@ const MemoryView = () => {
 	}
 
 	const handleKeyPress = (e: any) => {
-		if (e.key == "Enter") {
+		if (e.key === "Enter") {
 			//redirect unregistered user to registration
 			if (!userState._id) navigate("/register");
 			else {
@@ -181,7 +182,7 @@ const MemoryView = () => {
 		else setTriggerReportContent(!triggerReportContent);
 	};
 
-	if (recordState == null) return <React.Fragment></React.Fragment>;
+	if (recordState === null) return <React.Fragment></React.Fragment>;
 	return (
 		<React.Fragment>
 			<NavbarV1 />

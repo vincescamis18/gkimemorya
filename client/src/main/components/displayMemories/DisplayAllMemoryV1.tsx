@@ -50,16 +50,14 @@ const DisplayAllMemoryV1 = (props: IProps) => {
 		<div className="all-memory-parent">
 			<div className="all-memory-container">
 				{recordState.records?.map((record: IRecordWithCreator, index: number) => (
-					<React.Fragment>
-						<div className="memory-containner cursor-point no-select" onClick={() => selectMemory(record)}>
-							<div className="memory-details">
-								<h4 className="title">{record.title}</h4>
-								<p className="description">{record.description}</p>
-							</div>
-
-							<img className=" all-memory-display-container" src={record.images[0].link} key={index} alt="record image" />
+					<div className="memory-containner cursor-point no-select" key={index} onClick={() => selectMemory(record)}>
+						<div className="memory-details">
+							<h4 className="title">{record.title}</h4>
+							<p className="description">{record.description}</p>
 						</div>
-					</React.Fragment>
+
+						<img className=" all-memory-display-container" src={record.images[0].link} alt="record image" />
+					</div>
 				))}
 				{emptyImages()}
 			</div>

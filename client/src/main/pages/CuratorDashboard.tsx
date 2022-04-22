@@ -14,11 +14,11 @@ const CuratorDashboard = () => {
 					<span>Curator dashboard</span>
 				</div>
 				<div className="side-menu-option no-select" onClick={() => setDashboardSelected("memory of the day")}>
-					{dashboardSelected == "memory of the day" ? <span className="side-menu-option-selected"></span> : <></>}
+					{dashboardSelected === "memory of the day" ? <span className="side-menu-option-selected"></span> : <></>}
 					<span>Memory of the Day</span>
 				</div>
 				<div className="side-menu-option no-select" onClick={() => setDashboardSelected("curated collection")}>
-					{dashboardSelected == "curated collection" ? <span className="side-menu-option-selected"></span> : <></>}
+					{dashboardSelected === "curated collection" ? <span className="side-menu-option-selected"></span> : <></>}
 					<span>Curated Collection</span>
 				</div>
 			</div>
@@ -26,21 +26,18 @@ const CuratorDashboard = () => {
 		</React.Fragment>
 	);
 
-	const displaySection = () => {
-		switch (dashboardSelected) {
-			case "memory of the day":
-				return <MemoryOfTheDay />;
-			case "curated collection":
-				return <CuratedCollection />;
-		}
-	};
-
 	return (
 		<React.Fragment>
 			<NavbarV1 />
 			<div className="dashboard-parent">
 				<SideDashboard />
-				{displaySection()}
+
+				<div style={dashboardSelected === "memory of the day" ? { display: "inherit" } : { display: "none" }}>
+					<MemoryOfTheDay />
+				</div>
+				<div style={dashboardSelected === "curated collection" ? { display: "inherit" } : { display: "none" }}>
+					<CuratedCollection />
+				</div>
 			</div>
 		</React.Fragment>
 	);

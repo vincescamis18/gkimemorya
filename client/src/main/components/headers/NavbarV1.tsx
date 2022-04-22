@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/reducers/allReducer";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
@@ -23,7 +24,7 @@ const NavbarV1: React.FC = () => {
 	const [searchWord, setSearchWord] = useState(locationURL.pathname.includes("/search") ? params.searchWord : "");
 
 	const handleSearchWord = (e: any) => {
-		if (e.key == "Enter" && searchWord) navigate(`/search/${searchWord}`);
+		if (e.key === "Enter" && searchWord) navigate(`/search/${searchWord}`);
 	};
 
 	const handleLogout = () => {

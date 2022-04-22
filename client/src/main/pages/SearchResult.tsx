@@ -2,16 +2,16 @@ import React, { useState, useEffect } from "react";
 
 import axios from "axios";
 import { IRecordWithCreator } from "../redux/actionSchemas/recordSchema";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import ViewMemoryV2 from "../components/modals/ViewMemoryV2";
 import NavbarV1 from "../components/headers/NavbarV1";
 
 import EmptyV1 from "../assets/images/icons/emptyV3.png";
+import DisplayCuratedCollectionV2 from "../components/displayCuratedCollection/DisplayCuratedCollectionV2";
 
-const DisplayAllMemoryV2 = () => {
+const SearchResultPage = () => {
 	const { searchWord } = useParams();
-	const navigate = useNavigate();
 
 	const [memoryFiltered, setMemoryFiltered] = useState<{ records: IRecordWithCreator[] }>({ records: [] });
 	const [collectionFiltered, setCollectionFiltered] = useState<any>();
@@ -52,8 +52,8 @@ const DisplayAllMemoryV2 = () => {
 
 			memoryFilteredByTitle.records.forEach((item: any) => {
 				if (
-					memoryFilteredByDate.records.find(dateFilted => dateFilted._id == item._id) &&
-					memoryFilteredByLocation.records.find(dateFilted => dateFilted._id == item._id)
+					memoryFilteredByDate.records.find(dateFilted => dateFilted._id === item._id) &&
+					memoryFilteredByLocation.records.find(dateFilted => dateFilted._id === item._id)
 				)
 					combinedFilted.push(item);
 			});
@@ -63,7 +63,7 @@ const DisplayAllMemoryV2 = () => {
 			// only date is filtered
 
 			memoryFilteredByTitle.records.forEach((item: IRecordWithCreator) => {
-				if (memoryFilteredByDate.records.find(dateFilted => dateFilted._id == item._id)) combinedFilted.push(item);
+				if (memoryFilteredByDate.records.find(dateFilted => dateFilted._id === item._id)) combinedFilted.push(item);
 			});
 
 			setMemoryFiltered({ records: combinedFilted });
@@ -71,7 +71,7 @@ const DisplayAllMemoryV2 = () => {
 			// only location is filtered
 
 			memoryFilteredByTitle.records.forEach((item: IRecordWithCreator) => {
-				if (memoryFilteredByLocation.records.find(dateFilted => dateFilted._id == item._id)) combinedFilted.push(item);
+				if (memoryFilteredByLocation.records.find(dateFilted => dateFilted._id === item._id)) combinedFilted.push(item);
 			});
 
 			setMemoryFiltered({ records: combinedFilted });
@@ -174,32 +174,6 @@ const DisplayAllMemoryV2 = () => {
 		setViewRecord(record);
 	};
 
-	const DisplaycollectionFiltered = () => (
-		<div className="curated-collection-parent">
-			<div className="display-all-curation-parent">
-				<div>
-					{collectionFiltered?.map((collection: any, index: number) => (
-						<div
-							className="cursor-point colection-container colection-container-idle"
-							onClick={() => navigate(`/collection/${collection._id}`)}
-							key={index}
-						>
-							<div className="collection-img-container">
-								<img className="collection-img-container" src={collection.images[0].link} alt="record image" />
-							</div>
-
-							<div className="collection-info-container">
-								<h1>{collection.title}</h1>
-								<p>{collection.description}</p>
-							</div>
-						</div>
-					))}
-				</div>
-			</div>
-			{collectionFiltered?.length > 0 ? <></> : <h1 className="txt-grey">No Curated Stories Found</h1>}
-		</div>
-	);
-
 	const SideDashboard = () => (
 		<React.Fragment>
 			<div className="side-memu-spacing"></div>
@@ -264,29 +238,21 @@ const DisplayAllMemoryV2 = () => {
 				{SideDashboard()}
 
 				<div className="filter-result-container">
-					{showMemory ? (
-						<div>
-							<div className="filter-result-border"></div>
-							<p className="filter-result-title">Memories</p>
-							<DisplayUserAllMemories />
-						</div>
-					) : (
-						<></>
-					)}
+					<div style={showMemory ? { display: "inherit" } : { display: "none" }}>
+						<div className="filter-result-border"></div>
+						<p className="filter-result-title">Memories</p>
+						<DisplayUserAllMemories />
+					</div>
 
-					{showCollection ? (
-						<div>
-							<div className="filter-result-border"></div>
-							<p className="filter-result-title">Curated Stories</p>
-							<DisplaycollectionFiltered />
-						</div>
-					) : (
-						<React.Fragment></React.Fragment>
-					)}
+					<div style={showCollection ? { display: "inherit" } : { display: "none" }}>
+						<div className="filter-result-border"></div>
+						<p className="filter-result-title">Curated Stories</p>
+						<DisplayCuratedCollectionV2 curatedCollections={collectionFiltered} />
+					</div>
 				</div>
 			</div>
 		</React.Fragment>
 	);
 };
 
-export default DisplayAllMemoryV2;
+export default SearchResultPage;

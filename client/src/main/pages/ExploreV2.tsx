@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import NavbarV1 from "../components/headers/NavbarV1";
 import DisplayAllMemoryV1 from "../components/displayMemories/DisplayAllMemoryV1";
@@ -12,28 +12,37 @@ const ExploreV2: React.FC = () => {
 		<div className="center-tab-parent">
 			<div className="tab-parent-container no-select">
 				<div className="tab-option" onClick={() => setSelectedTab("Memories")}>
-					{selectedTab == "Memories" ? <span className="tab-option-selected"></span> : <span></span>}
+					<span className={selectedTab === "Memories" ? "tab-option-selected" : ""}></span>
 					<span>Memories</span>
 				</div>
 				<div className="tab-option" onClick={() => setSelectedTab("Curated Collection")}>
-					{selectedTab == "Curated Collection" ? <span className="tab-option-selected"></span> : <span></span>}
+					<span className={selectedTab === "Curated Collection" ? "tab-option-selected" : ""}></span>
 					<span>Curated Collections</span>
 				</div>
 				<div className="tab-option" onClick={() => setSelectedTab("Contributors")}>
-					{selectedTab == "Contributors" ? <span className="tab-option-selected"></span> : <span></span>}
+					<span className={selectedTab === "Contributors" ? "tab-option-selected" : ""}></span>
 					<span>Contributors</span>
 				</div>
 			</div>
 		</div>
 	);
-	
+
 	return (
 		<div className="explore">
 			<NavbarV1 />
 			<TabSelection />
-			{selectedTab == "Memories" ? <DisplayAllMemoryV1 userId={""} /> : <span></span>}
-			{selectedTab == "Curated Collection" ? <DisplayCuratedCollectionV1 /> : <span></span>}
-			{selectedTab == "Contributors" ? <DisplayAllUsersV1 /> : <span></span>}
+
+			<span style={selectedTab === "Memories" ? { display: "inherit" } : { display: "none" }}>
+				<DisplayAllMemoryV1 userId={""} />
+			</span>
+
+			<span style={selectedTab === "Curated Collection" ? { display: "inherit" } : { display: "none" }}>
+				<DisplayCuratedCollectionV1 />
+			</span>
+
+			<span style={selectedTab === "Contributors" ? { display: "inherit" } : { display: "none" }}>
+				<DisplayAllUsersV1 />
+			</span>
 		</div>
 	);
 };

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/reducers/allReducer";
 import { IRecord } from "../../redux/actionSchemas/recordSchema";
@@ -102,7 +103,7 @@ const ViewMemoryV1 = (props: IProps) => {
 				<div className="dot-container-bottom">
 					<div className="dot-container-column">
 						{props.record?.images.map((item, index) => (
-							<div key={index} className={index == page ? "active-dot" : "inactive-dot"}></div>
+							<div key={index} className={index === page ? "active-dot" : "inactive-dot"}></div>
 						))}
 					</div>
 				</div>
@@ -122,7 +123,7 @@ const ViewMemoryV1 = (props: IProps) => {
 				if (commentInput.scrollHeight <= 105) {
 					details.style.height = "545px";
 					// add for added white space from scroll height
-					if (commentInput.scrollHeight == 105) details.style.height = `${details.clientHeight + 3}px`;
+					if (commentInput.scrollHeight === 105) details.style.height = `${details.clientHeight + 3}px`;
 					details.style.height = `${details.clientHeight - commentInput.scrollHeight + 37}px`;
 				}
 
@@ -134,7 +135,7 @@ const ViewMemoryV1 = (props: IProps) => {
 	}
 
 	const handleKeyPress = (e: any) => {
-		if (e.key == "Enter") {
+		if (e.key === "Enter") {
 			setComment("");
 			handleHeightAdjustment();
 

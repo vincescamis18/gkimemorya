@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/reducers/allReducer";
 import { IRecordWithCreator } from "../../redux/actionSchemas/recordSchema";
@@ -46,7 +47,7 @@ const ViewMemoryV2 = (props: IProps) => {
 
 	// Prevent outer scroll to move if the modal is visible
 	useEffect(() => {
-		if (showModal == true) {
+		if (showModal) {
 			const xValue = window.pageXOffset;
 			const yValue = window.pageYOffset;
 			window.onscroll = () => window.scrollTo(xValue, yValue);
@@ -89,7 +90,7 @@ const ViewMemoryV2 = (props: IProps) => {
 				<div className="dot-container-bottom">
 					<div className="dot-container-column">
 						{props.record?.images.map((item, index) => (
-							<div key={index} className={index == page ? "active-dot" : "inactive-dot"}></div>
+							<div key={index} className={index === page ? "active-dot" : "inactive-dot"}></div>
 						))}
 					</div>
 				</div>
@@ -109,7 +110,7 @@ const ViewMemoryV2 = (props: IProps) => {
 				if (commentInput.scrollHeight <= 105) {
 					details.style.height = "545px";
 					// add for added white space from scroll height
-					if (commentInput.scrollHeight == 105) details.style.height = `${details.clientHeight + 3}px`;
+					if (commentInput.scrollHeight === 105) details.style.height = `${details.clientHeight + 3}px`;
 					details.style.height = `${details.clientHeight - commentInput.scrollHeight + 37}px`;
 				}
 
@@ -121,7 +122,7 @@ const ViewMemoryV2 = (props: IProps) => {
 	}
 
 	const handleKeyPress = (e: any) => {
-		if (e.key == "Enter") {
+		if (e.key === "Enter") {
 			//redirect unregistered user to registration
 			if (!userState._id) navigate("/register");
 			else {
