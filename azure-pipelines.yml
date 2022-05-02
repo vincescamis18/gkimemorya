@@ -73,3 +73,5 @@ stages:
               runtimeStack: 'NODE|16.14'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               startUpCommand: 'npm run development'
+              ScriptType: 'Inline Script'
+              InlineScript: 'npm run install-client'
